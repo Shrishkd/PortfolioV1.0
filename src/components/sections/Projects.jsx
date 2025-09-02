@@ -69,7 +69,7 @@ export function Projects() {
                   {project.featured && (
                     <div className="absolute top-4 left-4">
                       <Badge className="bg-primary text-primary-foreground p-1">
-                        <Star className="w-4 h-4 mr-1" />
+                        <Star className="w-4 h-4 mr-1 text-amber-400 fill-amber-400" />
                         Featured
                       </Badge>
                     </div>
