@@ -80,7 +80,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
         >
-          Hi, I'm Shrish — Computer Science student at VIT Bhopal with a strong interest in 
+          Hi, I'm Shrish, Computer Science student at VIT Bhopal with a strong interest in 
           AI, ML, full stack development, and fintech. I love solving real-world problems through code.
         </motion.p>
 
