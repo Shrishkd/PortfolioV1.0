@@ -186,6 +186,12 @@ export  function Experience() {
 
   {[ 
     {
+      href: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=CCAAC2D52EB35996243874976C21CCB0188F8E46C84E3774AEB4006B55A69569",
+      title: "Oracle Cloud Infrastructure: Data Science Professional",
+      org: "Oracle University",
+      desc: "Completed with verified certificate and badge"
+    },
+    {
       href: "https://coursera.org/verify/V76UOZ2JWO8E",
       title: "Unsupervised Learning, Recommenders & Reinforcement Learning",
       org: "Stanford Online (Coursera)",
@@ -195,6 +201,12 @@ export  function Experience() {
       href: "https://coursera.org/verify/MNFOQ5GZB6KX",
       title: "Generative AI: Prompt Engineering Basics",
       org: "IBM (Coursera)",
+      desc: "Completed with verified certificate and badge"
+    },
+    {
+      href: "https://learn.nvidia.com/certificates?id=DAyxMRjvT4OautJM6WWv2w",
+      title: "Getting Started with AI on Jetson Nano",
+      org: "NVIDIA",
       desc: "Completed with verified certificate and badge"
     }
   ].map((cert, index) => (
