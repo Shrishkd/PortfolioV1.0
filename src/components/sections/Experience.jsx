@@ -38,9 +38,9 @@ const achievements = [
   },
   {
     title: "Gold Medalist",
-    description: "Science Olympiad Achievement",
+    description: "National Science Olympiad Achievement",
     icon: Award,
-    details: "Awarded gold medal for exceptional performance in science competition"
+    details: "Awarded gold medal for exceptional performance in SOF. Zonal Rank: 1, International Rank : 4726"
   }
 ];
 
