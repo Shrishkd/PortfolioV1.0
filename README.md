@@ -8,21 +8,20 @@ Welcome to my personal portfolio website — a fully responsive, animated, and m
 
 ## 🌐 Live Demo
 
-🔗 [View Portfolio Live](https://portfolio-1u8z.onrender.com)  
+🔗 [View Portfolio Live](https://shrish-portfolio.netlify.app/)  
 🧠 [LinkedIn](https://www.linkedin.com/in/shrish-das-44ba5a27b/)  
 📂 [Resume (PDF)](https://drive.google.com/file/d/1IdLZr6cqbp7KYciJFFPAWjYTz1HRKXpX/view?usp=sharing)
 
 ---
 
-## 📸 Demo Preview
+<!--## 📸 Demo Preview
 
 | Landing Page (Hero) | Project Section |
 |---------------------|-----------------|
 | ![Hero](./screenshots/hero.png) | ![Projects](./screenshots/projects.png) |
 
-_Add your screenshots inside a `screenshots/` folder._
-
 ---
+-->
 
 ## 📦 Tech Stack
 
