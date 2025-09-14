@@ -6,12 +6,21 @@ import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
+    title: "Career Mentor",
+    description: "An AI-powered interview preparation platform that analyzes resumes, conducts interactive Q&A with voice and video monitoring, and generates personalized performance reports",
+    technologies: ["React.js", "Node.js", "AI/ML", "Authentication", "Database"],
+    githubUrl: "#",
+    liveUrl: "#",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop"
+  },
+  {
     title: "Car & Gold Price Prediction Web App",
     description: "A comprehensive full-stack web application that predicts car and gold prices based on user input. Features include user authentication, responsive design with loading animations, and a modern UI built with React and Tailwind CSS.",
     technologies: ["React.js", "Supabase", "Tailwind CSS", "Machine Learning", "Authentication"],
     githubUrl: "https://github.com/Shrishkd/Prise",
     liveUrl: "https://prise-1.onrender.com",
-    featured: true,
+    featured: false,
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop"
   },
   {
@@ -71,6 +80,13 @@ export function Projects() {
                       <Badge className="bg-primary text-primary-foreground p-1">
                         <Star className="w-4 h-4 mr-1 text-amber-400 fill-amber-400" />
                         Featured
+                      </Badge>
+                    </div>
+                  )}
+                  {project.title === "Career Mentor" && (
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-purple-500 text-white p-1">
+                        In development
                       </Badge>
                     </div>
                   )}
