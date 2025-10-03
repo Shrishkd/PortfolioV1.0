@@ -27,7 +27,7 @@ export function About() {
           <Card className="p-8 md:p-12 bg-card border-border shadow-lg hover:shadow-purple transition-all duration-300">
             <div className="text-center">
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-                I'm a passionate Computer Science student currently pursuing my B.Tech in AI/ML at VIT Bhopal. 
+                A dedicated and passionate Computer Science student currently pursuing my B.Tech in AI/ML at VIT Bhopal. 
                 My journey in technology started with a curiosity about how things work, leading me to explore artificial intelligence & machine learning.
               </p>
               

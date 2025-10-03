@@ -14,9 +14,12 @@ import {
   SiNumpy,
   SiHtml5,
   SiCss3,
-  SiGit
+  SiTailwindcss,
+  SiGithub,
+  SiSupabase,
+  SiPlotly
 } from 'react-icons/si';
-import { Coffee } from 'lucide-react';
+import { Coffee, BarChart3, TrendingUp, PieChart } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const skillCategories = [
@@ -34,6 +37,7 @@ const skillCategories = [
     skills: [
       { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
       { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" },
       { name: "React.js", icon: SiReact, color: "#61DAFB" },
       { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
       { name: "Express.js", icon: SiExpress, color: "#000000" },
@@ -45,6 +49,8 @@ const skillCategories = [
       { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
       { name: "Pandas", icon: SiPandas, color: "#150458" },
       { name: "NumPy", icon: SiNumpy, color: "#013243" },
+      { name: "Matplotlib", icon: BarChart3, color: "#11557C" },
+      { name: "Seaborn", icon: TrendingUp, color: "#4F94CD" },
     ]
   },
   {
@@ -52,8 +58,10 @@ const skillCategories = [
     skills: [
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+      { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
       { name: "Flask", icon: SiFlask, color: "#000000" },
-      { name: "Git", icon: SiGit, color: "#F05032" },
+      { name: "Power BI", icon: PieChart, color: "#F2C811" },
+      { name: "GitHub", icon: SiGithub, color: "#181717" },
     ]
   }
 ];
