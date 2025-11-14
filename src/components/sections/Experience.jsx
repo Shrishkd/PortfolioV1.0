@@ -198,6 +198,12 @@ export  function Experience() {
             desc: "Completed with verified certificate and badge"
           },
           {
+            href: "https://www.coursera.org/account/accomplishments/certificate/OI4VZMX0NQOM",
+            title: "Applied Machine Learning in Python",
+            org: "Michigan University(Coursera)",
+            desc: "Completed with verified certificate and badge"
+          },
+          {
             href: "https://coursera.org/verify/V76UOZ2JWO8E",
             title: "Unsupervised Learning, Recommenders & Reinforcement Learning",
             org: "Stanford Online (Coursera)",

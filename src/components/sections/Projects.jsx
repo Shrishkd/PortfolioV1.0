@@ -8,9 +8,9 @@ const projects = [
   {
     title: "Career Mentor",
     description: "An AI-powered interview preparation platform that analyzes resumes, conducts interactive Q&A with voice and video monitoring, and generates personalized performance reports",
-    technologies: ["React.js", "Node.js", "AI/ML", "Authentication", "Database"],
-    githubUrl: "#",
-    liveUrl: "#",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Flask (Python)", "Supabase", "OpenAI Whisper", "Google Gemini API", "Mediapipe", "OpenCV", "FPDF", "PyMuPDF", "SpeechRecognition", "Vite", "Render"],
+    githubUrl: "https://github.com/Shrishkd/CareerMentor",
+    liveUrl: "https://careermentor-ajvl.onrender.com",
     featured: false,
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop"
   },
@@ -26,7 +26,7 @@ const projects = [
   {
     title: "Sentiment Analysis ML App",
     description: "An intelligent sentiment analysis application that classifies user reviews into 5 different sentiment categories. Built with Flask backend and BERT model for accurate sentiment classification, with support for bulk CSV uploads." ,
-    technologies: ["Flask", "BERT", "Python", "HTML/CSS", "JavaScript", "Machine Learning"],
+    technologies: ["Python", "Machine Learning", "NLP", "Hugging Face Transformers", "PyTorch", "Flask (REST APIs)", "Pandas", "JavaScript", "HTML5/CSS3"],
     githubUrl: "https://github.com/Shrishkd/Sentiment_Analysis",
     liveUrl: "https://sentiment-analysis-ndrx.onrender.com",
     featured: false,
