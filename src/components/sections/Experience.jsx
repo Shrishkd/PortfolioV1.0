@@ -210,6 +210,12 @@ export  function Experience() {
             desc: "Completed with verified certificate and badge"
           },
           {
+            href: "https://coursera.org/verify/NT1R1HGKKWMF",
+            title: "Google Advanced Data Analytics Capstone",
+            org: "Google (Coursera)",
+            desc: "Completed with verified certificate and badge"
+          },
+          {
             href: "https://coursera.org/verify/MNFOQ5GZB6KX",
             title: "Generative AI: Prompt Engineering Basics",
             org: "IBM (Coursera)",
