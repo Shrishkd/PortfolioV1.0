@@ -27,8 +27,8 @@ const projects = [
     title: "Sentiment Analysis ML App",
     description: "An intelligent sentiment analysis application that classifies user reviews into 5 different sentiment categories. Built with Flask backend and BERT model for accurate sentiment classification, with support for bulk CSV uploads." ,
     technologies: ["Python", "Machine Learning", "NLP", "Hugging Face Transformers", "PyTorch", "Flask (REST APIs)", "Pandas", "JavaScript", "HTML5/CSS3"],
-    githubUrl: "https://github.com/Shrishkd/Sentiment_Analysis",
-    liveUrl: "https://sentiment-analysis-ndrx.onrender.com",
+    githubUrl: "https://github.com/Shrishkd/Moodify2.o.git",
+    liveUrl: "https://moodify2-o.vercel.app",
     featured: false,
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop"
   }
