@@ -10,13 +10,13 @@ import {
   SiMongodb, 
   SiMysql,
   SiScikitlearn,
+  SiAmazonwebservices,
   SiPandas,
   SiNumpy,
   SiHtml5,
   SiCss3,
   SiTailwindcss,
   SiGithub,
-  SiSupabase,
   SiPlotly
 } from 'react-icons/si';
 import { Coffee, BarChart3, TrendingUp, PieChart } from 'lucide-react';
@@ -58,10 +58,10 @@ const skillCategories = [
     skills: [
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-      { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
       { name: "Flask", icon: SiFlask, color: "#000000" },
       { name: "Power BI", icon: PieChart, color: "#F2C811" },
       { name: "GitHub", icon: SiGithub, color: "#181717" },
+      { name: "AWS (basics)", icon: SiAmazonwebservices, color: "#F05032" }
     ]
   }
 ];
