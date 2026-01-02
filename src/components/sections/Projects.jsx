@@ -5,13 +5,26 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const projects = [
+{
+    title: "Bullseye",
+    description:
+      "An AI-powered investment and trading assistant that provides real-time market data, technical analysis, and intelligent AI-driven explanations. The platform streams live prices via WebSockets, computes indicators like RSI, SMA, and EMA, and uses a Gemini-powered AI assistant to explain market sentiment in a clear, educational manner. ",
+    technologies: [
+      "React","TypeScript","TailwindCSS","FastAPI (Python)","Async SQLAlchemy","Pydantic v2","JWT Authentication","WebSockets","Google Gemini API","Technical Indicators","Vector Embeddings","Finnhub API","Vite","Render"],
+    githubUrl: "https://github.com/Shrishkd/Bullseye",
+    liveUrl: "", // add once deployed
+    featured: false,
+    image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=500&h=300&fit=crop"
+  },
   {
     title: "Career Mentor",
-    description: "An AI-powered interview preparation platform that analyzes resumes, conducts interactive Q&A with voice and video monitoring, and generates personalized performance reports",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Flask (Python)", "Supabase", "OpenAI Whisper", "Google Gemini API", "Mediapipe", "OpenCV", "FPDF", "PyMuPDF", "SpeechRecognition", "Vite", "Render"],
+    description: "Career Mentor is an AI-driven platform that optimizes interview preparation by generating role-specific questions from resumes. It features interactive voice interviews, live monitoring, and coding challenges. Candidates receive personalized reports with advanced performance scoring and providing the comprehensive feedback to build confidence for real-world career success.",
+
+    technologies: ["React", "TypeScript", "TailwindCSS", "Flask (Python)", "Supabase", "OpenAI Whisper", "Google Gemini API", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Matplotlib", "Vite", "Render"],
+
     githubUrl: "https://github.com/Shrishkd/CareerMentor",
     liveUrl: "https://careermentor-ajvl.onrender.com",
-    featured: false,
+    featured: true,
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop"
   },
   {
@@ -26,7 +39,7 @@ const projects = [
   {
     title: "Sentiment Analysis ML App",
     description: "An intelligent sentiment analysis application that classifies user reviews into 5 different sentiment categories. Built with Flask backend and BERT model for accurate sentiment classification, with support for bulk CSV uploads." ,
-    technologies: ["Python", "Machine Learning", "NLP", "Hugging Face Transformers", "PyTorch", "Flask (REST APIs)", "Pandas", "JavaScript", "HTML5/CSS3"],
+    technologies: ["Python", "Machine Learning", "NLP", "Hugging Face Transformers", "PyTorch", "Flask (REST APIs)", "Pandas", "JavaScript"],
     githubUrl: "https://github.com/Shrishkd/Moodify2.o.git",
     liveUrl: "https://moodify2-o.vercel.app",
     featured: false,
@@ -83,7 +96,7 @@ export function Projects() {
                       </Badge>
                     </div>
                   )}
-                  {project.title === "Career Mentor" && (
+                  {project.title === "Bullseye" && (
                     <div className="absolute top-4 left-4">
                       <Badge className="bg-purple-500 text-white p-1">
                         In development
