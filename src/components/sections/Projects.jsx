@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Star } from 'lucide-react';
+import { Github, ExternalLink, Star, ChevronDown, ChevronUp } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -29,7 +30,7 @@ const projects = [
   },
   {
     title: "Growstocks",
-    description: "An ML-based decision support application that analyzes historical stock data and market indicators to recommend BUY or DO NOT BUY signals with a confidence score. Implements walk-forward validation, offline backtesting, and a FastAPI backend connected to a responsive React frontend.",
+    description: "An ML-based decision support application that analyzes historical stock data and market indicators to recommend BUY or DO NOT BUY signals with a confidence score. Implements walk-forward validation, offline backtesting, and a FastAPI backend.",
     technologies: ["Python" , "Scikit-learn" , "Machine Learning" , "FastAPI" , "Pandas" , "NumPy" , "React" , "JavaScript"],
     githubUrl: "https://github.com/Shrishkd/GrowStocks-ML.git",
     liveUrl: "https://growstocks-ml-2.onrender.com",
@@ -57,6 +58,11 @@ const projects = [
 ];
 
 export function Projects() {
+  const [showAll, setShowAll] = useState(false);
+  const initialProjectsCount = 4;
+  const displayedProjects = showAll ? projects : projects.slice(0, initialProjectsCount);
+  const hasMoreProjects = projects.length > initialProjectsCount;
+
   return (
     <section id="projects" className="py-20 bg-muted/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +83,7 @@ export function Projects() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -172,6 +178,55 @@ export function Projects() {
             </motion.div>
           ))}
         </div>
+
+        {hasMoreProjects && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setShowAll(!showAll)}
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              {showAll ? (
+                <>
+                  See Less{' '}
+                  <motion.div
+                    key="chevron-up"
+                    initial={{ y: 0, rotate: 0 }}
+                    animate={{ y: [0, -4, 0], rotate: 0 }}
+                    transition={{ 
+                      y: { duration: 0.6, repeat: Infinity, repeatDelay: 0.8, ease: "easeInOut" },
+                      rotate: { duration: 0.3 }
+                    }}
+                  >
+                    <ChevronUp className="w-5 h-5 ml-2" />
+                  </motion.div>
+                </>
+              ) : (
+                <>
+                  See More{' '}
+                  <motion.div
+                    key="chevron-down"
+                    initial={{ y: 0, rotate: 0 }}
+                    animate={{ y: [0, 4, 0], rotate: 0 }}
+                    transition={{ 
+                      y: { duration: 0.6, repeat: Infinity, repeatDelay: 1.5, ease: "easeInOut" },
+                      rotate: { duration: 0.3 }
+                    }}
+                  >
+                    <ChevronDown className="w-5 h-5 ml-2" />
+                  </motion.div>
+                </>
+              )}
+            </Button>
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
