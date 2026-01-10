@@ -20,7 +20,7 @@ const projects = [
     title: "Career Mentor",
     description: "Career Mentor is an AI-driven platform that optimizes interview preparation by generating role-specific questions from resumes. It features interactive voice interviews, live monitoring, and coding challenges. Candidates receive personalized reports with advanced performance scoring and providing the comprehensive feedback to build confidence for real-world career success.",
 
-    technologies: ["React", "TypeScript", "TailwindCSS", "Flask (Python)", "Supabase", "OpenAI Whisper", "Google Gemini API", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Matplotlib", "Vite", "Render"],
+    technologies: ["Flask (Python)", "Supabase", "OpenAI Whisper", "Google Gemini API", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Matplotlib", "React", "TypeScript", "TailwindCSS", "Vite", "Render"],
 
     githubUrl: "https://github.com/Shrishkd/CareerMentor",
     liveUrl: "https://careermentor-ajvl.onrender.com",
@@ -28,13 +28,13 @@ const projects = [
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop"
   },
   {
-    title: "Car & Gold Price Prediction Web App",
-    description: "A comprehensive full-stack web application that predicts car and gold prices based on user input. Features include user authentication, responsive design with loading animations, and a modern UI built with React and Tailwind CSS.",
-    technologies: ["React.js", "Supabase", "Tailwind CSS", "Machine Learning", "Authentication"],
-    githubUrl: "https://github.com/Shrishkd/Prise",
-    liveUrl: "https://prise-1.onrender.com",
+    title: "Growstocks",
+    description: "An ML-based decision support application that analyzes historical stock data and market indicators to recommend BUY or DO NOT BUY signals with a confidence score. Implements walk-forward validation, offline backtesting, and a FastAPI backend connected to a responsive React frontend.",
+    technologies: ["Python" , "Scikit-learn" , "Machine Learning" , "FastAPI" , "Pandas" , "NumPy" , "React" , "JavaScript"],
+    githubUrl: "https://github.com/Shrishkd/GrowStocks-ML.git",
+    liveUrl: "https://growstocks-ml-2.onrender.com",
     featured: false,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop"
+    image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=500&h=300&fit=crop"
   },
   {
     title: "Sentiment Analysis ML App",
@@ -44,6 +44,15 @@ const projects = [
     liveUrl: "https://moodify2-o.vercel.app",
     featured: false,
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop"
+  },
+  {
+    title: "Car & Gold Price Prediction Web App",
+    description: "A comprehensive full-stack web application that predicts car and gold prices based on user input. Features include user authentication, responsive design with loading animations, and a modern UI built with React and Tailwind CSS.",
+    technologies: ["React.js", "Supabase", "Tailwind CSS", "Machine Learning", "Authentication"],
+    githubUrl: "https://github.com/Shrishkd/Prise",
+    liveUrl: "https://prise-1.onrender.com",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop"
   }
 ];
 
