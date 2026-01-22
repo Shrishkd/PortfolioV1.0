@@ -61,7 +61,7 @@ const skillCategories = [
       { name: "Flask", icon: SiFlask, color: "#000000" },
       { name: "Power BI", icon: PieChart, color: "#F2C811" },
       { name: "GitHub", icon: SiGithub, color: "#181717" },
-      { name: "AWS (basics)", icon: SiAmazonwebservices, color: "#F05032" }
+      { name: "AWS", icon: SiAmazonwebservices, color: "#F05032" }
     ]
   }
 ];
