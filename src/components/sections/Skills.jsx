@@ -56,12 +56,12 @@ const skillCategories = [
   {
     title: "Databases & Tools",
     skills: [
+      { name: "AWS", icon: SiAmazonwebservices, color: "#F05032" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
       { name: "Flask", icon: SiFlask, color: "#000000" },
       { name: "Power BI", icon: PieChart, color: "#F2C811" },
-      { name: "GitHub", icon: SiGithub, color: "#181717" },
-      { name: "AWS", icon: SiAmazonwebservices, color: "#F05032" }
+      { name: "GitHub", icon: SiGithub, color: "#181717" }
     ]
   }
 ];
