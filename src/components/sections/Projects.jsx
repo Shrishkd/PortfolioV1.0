@@ -11,9 +11,9 @@ const projects = [
     description:
       "An AI-powered investment and trading assistant that provides real-time market data, technical analysis, and intelligent AI-driven explanations. The platform streams live prices via WebSockets, computes indicators like RSI, SMA, and EMA, and uses a Gemini-powered AI assistant to explain market sentiment in a clear, educational manner. ",
     technologies: [
-      "React","TypeScript","TailwindCSS","FastAPI (Python)","Async SQLAlchemy","Pydantic v2","JWT Authentication","WebSockets","Google Gemini API","Technical Indicators","Vector Embeddings","Finnhub API","Vite","Render"],
-    githubUrl: "https://github.com/Shrishkd/Bullseye",
-    liveUrl: "", // add once deployed
+      "React","TypeScript","TailwindCSS","FastAPI (Python)","Async SQLAlchemy","Pydantic v2","JWT Authentication","WebSockets","Google Gemini API","Technical Indicators","Vector Embeddings","Upstox API","Vite","Render"],
+    githubUrl: "https://github.com/Shrishkd/BullseyeOriginal.git",
+    liveUrl: "https://bullseye-deployed.onrender.com", 
     featured: false,
     image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=500&h=300&fit=crop"
   },
