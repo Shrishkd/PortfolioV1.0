@@ -3,7 +3,7 @@ import { Download, Github, Linkedin } from 'lucide-react';
 import { TypingAnimation } from '@/components/TypingAnimation';
 import { Button } from '@/components/ui/button';
 import { ParticlesBackground } from '@/components/ParticlesBackground';
-import profileImage from '@/assets/profile-image.jpg';
+import profileImage from '@/assets/profile-image.png';
 
 const typingTexts = [
   'ML Developer',
