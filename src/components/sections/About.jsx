@@ -13,7 +13,7 @@ export function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl section-heading text-gradient mb-6">
-            About Me
+            A bit about me
           </h2>
           <div className="w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-8 shadow-neon-sm" />
         </motion.div>
@@ -27,18 +27,20 @@ export function About() {
           <Card className="p-8 md:p-12">
             <div className="text-center">
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-                Hey, I am Shrish, Computer Science student currently pursuing my B.Tech in AI/ML at VIT Bhopal. 
-                My journey in technology started with a curiosity about how things work, leading me to explore artificial intelligence & machine learning.
+                I am a passionate <span className="text-neon-cyan">Software Developer</span> driven by the mission to build intelligent, scalable, and user-focused applications. With a strong foundation in <span className="text-neon-cyan">Artificial Intelligence and Machine Learning</span>.
               </p>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-                When I'm not coding or studying, you'll find me exploring the financial markets as a trader, 
-                combining my technical knowledge with market analysis.
+                My experience in <span className="text-neon-cyan">full-stack development</span> and modern technologies allows me to design and deploy end-to-end applications with seamless user experiences. I combine strong problem-solving skills, innovative design thinking, and attention to detail in my work.
+              </p>
+
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+              My strong interest in <span className="text-neon-cyan">financial markets</span> has sharpened my analytical thinking and decision-making capabilities, allowing me to apply a data-driven approach to my technical work.
               </p>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 I'm always eager to learn new technologies, collaborate on exciting projects, and contribute 
-                to meaningful solutions that can make a positive impact. Let's build something amazing together!
+                to meaningful solutions that can make a positive impact. <span className="text-neon-cyan">Let's build something amazing together!</span>
               </p>
             </div>
           </Card>

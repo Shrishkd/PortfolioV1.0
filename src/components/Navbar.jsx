@@ -173,7 +173,7 @@ export function Navbar() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
-              Say Hello
+              Say S'up
             </motion.button>
           </div>
 
@@ -240,7 +240,7 @@ export function Navbar() {
                 transition={{ delay: navItems.length * 0.1 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Say S'up!
+              Say S'up
               </motion.button>
             </div>
           </motion.div>
