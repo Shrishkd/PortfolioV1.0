@@ -6,7 +6,17 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const projects = [
-{
+
+  {
+    title: "Career Mentor",
+    description: "Career Mentor is an AI-driven platform that optimizes interview preparation by generating role-specific questions from resumes. It features interactive voice interviews, live monitoring, and coding challenges. Candidates receive personalized reports with advanced performance scoring and providing the comprehensive feedback to build confidence for real-world career success.",
+    technologies: ["Flask (Python)",  "OpenAI Whisper", "Google Gemini API", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Matplotlib", "Supabase", "React", "TypeScript", "TailwindCSS", "Vite", "Render"],
+    githubUrl: "https://github.com/Shrishkd/CareerMentor",
+    liveUrl: "https://careermentor-ajvl.onrender.com",
+    featured: true,
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/c_crop,g_north_west,h_790,w_1899/Career-mentor_m6fcsy.png"
+  },
+  {
     title: "Bullseye",
     description:
       "An AI-powered investment and trading assistant that provides real-time market data, technical analysis, and intelligent AI-driven explanations. The platform streams live prices via WebSockets, computes indicators like RSI, SMA, and EMA, and uses a Gemini-powered AI assistant to explain market sentiment in a clear, educational manner. ",
@@ -16,17 +26,6 @@ const projects = [
     liveUrl: "https://bullseye-deployed.onrender.com", 
     featured: false,
     image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=500&h=300&fit=crop"
-  },
-  {
-    title: "Career Mentor",
-    description: "Career Mentor is an AI-driven platform that optimizes interview preparation by generating role-specific questions from resumes. It features interactive voice interviews, live monitoring, and coding challenges. Candidates receive personalized reports with advanced performance scoring and providing the comprehensive feedback to build confidence for real-world career success.",
-
-    technologies: ["Flask (Python)",  "OpenAI Whisper", "Google Gemini API", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Matplotlib", "Supabase", "React", "TypeScript", "TailwindCSS", "Vite", "Render"],
-
-    githubUrl: "https://github.com/Shrishkd/CareerMentor",
-    liveUrl: "https://careermentor-ajvl.onrender.com",
-    featured: true,
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop"
   },
   {
     title: "Growstocks",
@@ -103,7 +102,7 @@ export function Projects() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
                   {project.featured && (
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 right-4">
                       <Badge className="border border-cyan-400/30 bg-gradient-to-r from-neon-blue/90 to-neon-purple/90 text-primary-foreground p-1 shadow-neon-sm">
                         <Star className="w-4 h-4 mr-1 text-amber-400 fill-amber-400" />
                         Featured
@@ -111,7 +110,7 @@ export function Projects() {
                     </div>
                   )}
                   {project.title === "Bullseye" && (
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 right-4">
                       <Badge className="bg-neon-purple/90 text-white border border-purple-400/40 p-1 shadow-neon-sm">
                         In development
                       </Badge>
