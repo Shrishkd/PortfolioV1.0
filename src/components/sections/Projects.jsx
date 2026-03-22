@@ -14,7 +14,7 @@ const projects = [
     githubUrl: "https://github.com/Shrishkd/CareerMentor",
     liveUrl: "https://careermentor-ajvl.onrender.com",
     featured: true,
-    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/c_crop,g_north_west,h_790,w_1899/Career-mentor_m6fcsy.png"
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774171058/copy_of_career-mentor_m6fcsy_3408b2.png"
   },
   {
     title: "Bullseye",
