@@ -3,10 +3,10 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
-    "./app/**/*.{js,jsx}",
-    "./src/**/*.{js,jsx}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -19,6 +19,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
@@ -61,6 +62,12 @@ module.exports = {
           dark: 'hsl(var(--purple-dark))',
           accent: 'hsl(var(--purple-accent))',
         },
+        neon: {
+          blue: '#00F0FF',
+          cyan: '#00FFFF',
+          purple: '#A855F7',
+          pink: '#FF00FF',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -102,11 +109,27 @@ module.exports = {
         },
         'pulse-glow': {
           '0%, 100%': {
-            boxShadow: '0 0 20px hsl(270 95% 75% / 0.3)',
+            boxShadow:
+              '0 0 24px hsl(187 100% 50% / 0.45), 0 0 48px hsl(271 91% 65% / 0.25)',
           },
           '50%': {
-            boxShadow: '0 0 40px hsl(270 95% 75% / 0.6)',
+            boxShadow:
+              '0 0 40px hsl(187 100% 50% / 0.65), 0 0 80px hsl(271 91% 65% / 0.4)',
           },
+        },
+        'neon-ring-pulse': {
+          '0%, 100%': {
+            boxShadow:
+              '0 0 20px hsl(187 100% 50% / 0.5), 0 0 45px hsl(271 91% 65% / 0.35), inset 0 0 20px hsl(187 100% 50% / 0.1)',
+          },
+          '50%': {
+            boxShadow:
+              '0 0 35px hsl(187 100% 50% / 0.75), 0 0 70px hsl(271 91% 65% / 0.45), inset 0 0 28px hsl(180 100% 50% / 0.15)',
+          },
+        },
+        'spin-slow': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
         },
         'typing': {
           from: { width: '0' },
@@ -119,7 +142,9 @@ module.exports = {
         'fade-in': 'fade-in 0.6s ease-out',
         'slide-in-right': 'slide-in-right 0.8s ease-out',
         'float': 'float 3s ease-in-out infinite',
-        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 2.5s ease-in-out infinite',
+        'neon-ring-pulse': 'neon-ring-pulse 3s ease-in-out infinite',
+        'spin-slow': 'spin-slow 14s linear infinite',
         'typing': 'typing 3.5s steps(40, end)',
       },
     },

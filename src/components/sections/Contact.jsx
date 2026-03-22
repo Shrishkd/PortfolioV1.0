@@ -112,10 +112,10 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl section-heading text-gradient mb-6">
             Get In Touch
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-8 shadow-neon-sm" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
           </p>
@@ -141,15 +141,15 @@ export function Contact() {
                     viewport={{ once: true }}
                     className="flex items-center gap-4"
                   >
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-full flex items-center justify-center shadow-[0_0_20px_-6px_hsl(187_100%_50%/0.3)]">
+                      <Icon className="w-6 h-6 text-neon-cyan" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">{contact.label}</p>
                       {contact.href ? (
                         <a 
                           href={contact.href}
-                          className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                          className="text-foreground hover:text-neon-cyan transition-colors duration-300 font-medium"
                         >
                           {contact.value}
                         </a>
@@ -178,12 +178,12 @@ export function Contact() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300 group"
+                      className="w-12 h-12 bg-card/60 backdrop-blur-sm border border-cyan-500/25 rounded-full flex items-center justify-center hover:shadow-neon-sm hover:border-cyan-400/50 hover:scale-110 transition-all duration-300 group"
                       style={{ 
                         '--hover-color': social.color 
                       }}
                     >
-                      <Icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                      <Icon className="w-6 h-6 text-muted-foreground group-hover:text-neon-cyan transition-colors duration-300" />
                     </motion.a>
                   );
                 })}
@@ -219,7 +219,7 @@ export function Contact() {
                   <Textarea name="message" value={form.message} onChange={handleInputChange} required rows={5} placeholder="Tell me more about your project or inquiry..." />
                 </div>
                 <div>
-                  <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-purple transition-all duration-300">
+                  <Button type="submit" disabled={isSubmitting} className="w-full">
                     {isSubmitting ? (
                       <div className="flex items-center">
                         <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
@@ -242,12 +242,13 @@ export function Contact() {
         <AnimatePresence>
           {showModal && (
             <motion.div
-              className="fixed top-6 right-6 z-50 bg-white dark:bg-zinc-900 rounded-xl shadow-lg px-8 py-6 text-base text-center min-w-64"              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              className="fixed top-6 right-6 z-50 rounded-xl border border-cyan-500/25 bg-card/95 backdrop-blur-xl shadow-neon-md px-8 py-6 text-base text-center min-w-64"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.4 }}
             >
-              <p className="text-primary font-semibold">Thanks for reaching out! 🙌</p>
+              <p className="text-neon-cyan font-semibold drop-shadow-[0_0_8px_hsl(187_100%_50%/0.35)]">Thanks for reaching out! 🙌</p>
               <p className="text-muted-foreground">I'll get back to you soon.</p>
             </motion.div>
           )}

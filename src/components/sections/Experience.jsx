@@ -73,10 +73,10 @@ export function Experience() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl section-heading text-gradient mb-6">
             Achievements
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-8 shadow-neon-sm" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             My academic journey and recognition in national competitions
           </p>
@@ -105,11 +105,11 @@ export function Experience() {
                     transition={{ duration: 0.8, delay: index * 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="p-6 md:p-8 bg-card border-border shadow-lg hover:shadow-purple transition-all duration-300 hover:-translate-y-2">
+                    <Card className="p-6 md:p-8">
                       <div className="flex flex-col md:flex-row gap-6">
                         <div className="flex-shrink-0">
-                          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                            <Icon className="w-8 h-8 text-primary" />
+                          <div className="w-16 h-16 bg-cyan-500/10 border border-cyan-500/20 rounded-full flex items-center justify-center shadow-[0_0_24px_-8px_hsl(187_100%_50%/0.35)]">
+                            <Icon className="w-8 h-8 text-neon-cyan" />
                           </div>
                         </div>
 
@@ -117,14 +117,14 @@ export function Experience() {
                           <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                             <div>
                               <h4 className="text-xl font-bold text-foreground mb-2">{exp.role}</h4>
-                              <p className="text-lg text-primary font-medium mb-2">{exp.organization}</p>
+                              <p className="text-lg text-neon-cyan font-medium mb-2 drop-shadow-[0_0_12px_hsl(187_100%_50%/0.25)]">{exp.organization}</p>
                             </div>
                             <div className="text-right">
                               <div className="flex items-center text-muted-foreground mb-2">
                                 <Calendar className="w-4 h-4 mr-2" />
                                 <span>{exp.period}</span>
                               </div>
-                              <div className="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-xs font-medium inline-block">
+                              <div className="bg-cyan-500/10 border border-cyan-500/25 text-neon-cyan px-2 py-0.5 rounded-full text-xs font-medium inline-block">
                             {exp.type}
                           </div>
                             </div>
@@ -135,7 +135,7 @@ export function Experience() {
                             <ul className="space-y-2">
                               {exp.responsibilities.map((resp, i) => (
                                 <li key={i} className="flex items-start">
-                                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                  <div className="w-2 h-2 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-full mt-2 mr-3 flex-shrink-0 shadow-[0_0_8px_hsl(187_100%_50%/0.6)]"></div>
                                   <span className="text-muted-foreground">{resp}</span>
                                 </li>
                               ))}
@@ -147,7 +147,7 @@ export function Experience() {
                             <ul className="space-y-2">
                               {exp.achievements.map((achievement, i) => (
                                 <li key={i} className="flex items-start">
-                                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                  <div className="w-2 h-2 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-full mt-2 mr-3 flex-shrink-0 shadow-[0_0_8px_hsl(187_100%_50%/0.6)]"></div>
                                   <span className="text-muted-foreground">{achievement}</span>
                                 </li>
                               ))}
@@ -160,7 +160,7 @@ export function Experience() {
                                 href={exp.reportLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+                                className="inline-flex items-center gap-2 text-neon-cyan font-medium hover:underline hover:drop-shadow-[0_0_8px_hsl(187_100%_50%/0.5)]"
                               >
                                 <FileText className="w-4 h-4" />
                                 View Report
@@ -176,7 +176,7 @@ export function Experience() {
                   {/* Connecting line between experiences */}
                   {!isLast && (
                     <div className="flex justify-center my-6">
-                      <div className="w-0.5 h-12 bg-gradient-to-b from-primary/50 to-primary/20"></div>
+                      <div className="w-0.5 h-12 bg-gradient-to-b from-neon-cyan/50 to-neon-purple/20 shadow-[0_0_12px_hsl(187_100%_50%/0.3)]"></div>
                     </div>
                   )}
                 </div>
@@ -209,13 +209,13 @@ export function Experience() {
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
                 >
-                  <Card className="p-6 bg-card border-border shadow-lg hover:shadow-purple transition-all duration-300 text-center h-full">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-6 h-6 text-primary" />
+                  <Card className="p-6 text-center h-full">
+                    <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_20px_-6px_hsl(187_100%_50%/0.35)]">
+                      <Icon className="w-6 h-6 text-neon-cyan" />
                     </div>
 
-                    <h4 className="text-lg font-bold text-foreground mb-2">{achievement.title}</h4>
-                    <p className="text-primary font-medium mb-3">{achievement.description}</p>
+                    <h4 className="text-lg font-bold font-orbitron tracking-wide text-foreground mb-2">{achievement.title}</h4>
+                    <p className="text-neon-cyan font-medium mb-3">{achievement.description}</p>
                     <p className="text-sm text-muted-foreground">{achievement.details}</p>
                   </Card>
                 </motion.div>

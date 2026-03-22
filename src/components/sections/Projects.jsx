@@ -73,10 +73,10 @@ export function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl section-heading text-gradient mb-6">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-8 shadow-neon-sm" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A showcase of my recent work in web development and machine learning
           </p>
@@ -90,22 +90,21 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
               className="group"
             >
-              <Card className="overflow-hidden bg-card border-border shadow-lg hover:shadow-purple transition-all duration-500 h-full">
+              <Card className="overflow-hidden h-full p-0">
                 {/* Project Image */}
-                <div className="relative overflow-hidden h-48 bg-gradient-to-br from-primary/20 to-primary/5">
+                <div className="relative overflow-hidden h-48 bg-gradient-to-br from-cyan-500/20 via-purple-500/15 to-transparent">
                   <motion.img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
                   {project.featured && (
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-primary text-primary-foreground p-1">
+                      <Badge className="border border-cyan-400/30 bg-gradient-to-r from-neon-blue/90 to-neon-purple/90 text-primary-foreground p-1 shadow-neon-sm">
                         <Star className="w-4 h-4 mr-1 text-amber-400 fill-amber-400" />
                         Featured
                       </Badge>
@@ -113,7 +112,7 @@ export function Projects() {
                   )}
                   {project.title === "Bullseye" && (
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-purple-500 text-white p-1">
+                      <Badge className="bg-neon-purple/90 text-white border border-purple-400/40 p-1 shadow-neon-sm">
                         In development
                       </Badge>
                     </div>
@@ -122,7 +121,7 @@ export function Projects() {
 
                 <div className="p-6">
                   {/* Project Title */}
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl font-bold font-orbitron tracking-wide text-foreground mb-3 group-hover:text-neon-cyan transition-colors duration-300">
                     {project.title}
                   </h3>
 
@@ -137,7 +136,7 @@ export function Projects() {
                       <Badge
                         key={techIndex}
                         variant="secondary"
-                        className="h-7 px-3 py-1.5 text-sm bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300 cursor-default"
+                        className="h-7 px-3 py-1.5 text-sm border border-cyan-500/20 bg-cyan-500/10 text-neon-cyan hover:bg-cyan-500/20 hover:border-cyan-400/40 transition-colors duration-300 cursor-default"
                       >
                         {tech}
                       </Badge>
@@ -151,7 +150,7 @@ export function Projects() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="flex-1 h-11 px-5 py-2.5 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    className="flex-1 h-11 px-5 py-2.5"
                     asChild
                   >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -163,7 +162,7 @@ export function Projects() {
                   {/* Live Demo Button */}
                   <Button
                     size="sm"
-                    className="flex-1 h-11 px-5 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-purple transition-all duration-300"
+                    className="flex-1 h-11 px-5 py-2.5"
                     asChild
                   >
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -191,7 +190,6 @@ export function Projects() {
               variant="outline"
               size="lg"
               onClick={() => setShowAll(!showAll)}
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               {showAll ? (
                 <>
@@ -238,7 +236,6 @@ export function Projects() {
           <Button
             variant="outline"
             size="lg"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             asChild
           >
             <a href="https://github.com/Shrishkd" target="_blank" rel="noopener noreferrer">

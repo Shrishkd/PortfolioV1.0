@@ -8,7 +8,7 @@ export function ThemeToggle() {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-card border border-border shadow-lg hover:shadow-purple transition-all duration-300"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-card/70 backdrop-blur-xl border border-cyan-500/30 shadow-neon-sm hover:shadow-neon-md hover:border-cyan-400/50 transition-all duration-300 ease-out"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, scale: 0 }}
@@ -21,9 +21,9 @@ export function ThemeToggle() {
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         {theme === 'dark' ? (
-          <Sun className="w-6 h-6 text-primary" />
+          <Sun className="w-6 h-6 text-neon-cyan drop-shadow-[0_0_10px_hsl(187_100%_50%/0.45)]" />
         ) : (
-          <Moon className="w-6 h-6 text-primary" />
+          <Moon className="w-6 h-6 text-neon-cyan drop-shadow-[0_0_10px_hsl(187_100%_50%/0.45)]" />
         )}
       </motion.div>
     </motion.button>

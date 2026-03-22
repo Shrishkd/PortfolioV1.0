@@ -15,87 +15,90 @@ const typingTexts = [
 export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Particles Background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0a1628]/50 via-transparent to-background" aria-hidden />
       <div className="absolute inset-0 z-0">
         <ParticlesBackground />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10">
-
-        {/* Profile Image */}
+        {/* Profile Image — multi-layer neon ring + float */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: "spring", duration: 0.8, delay: 0.2 }}
+          transition={{ type: 'spring', duration: 0.8, delay: 0.2 }}
           className="flex justify-center mb-8"
         >
-          <motion.div
-            className="relative"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          >
-            <img
-              src={profileImage}
-              alt="Shrish"
-              className="w-72 h-72 rounded-full object-cover border-4 border-primary shadow-purple"
+          <motion.div className="relative" whileHover={{ scale: 1.04 }} transition={{ type: 'spring', stiffness: 280, damping: 18 }}>
+            <div
+              className="absolute -inset-4 rounded-full bg-gradient-to-br from-neon-cyan/30 via-neon-purple/40 to-neon-blue/30 blur-2xl opacity-90 animate-pulse-glow"
+              aria-hidden
             />
             <motion.div
-              className="absolute inset-0 rounded-full border-4 border-primary"
-              animate={{ 
-                boxShadow: [
-                  '0 0 20px hsl(270 95% 75% / 0.3)',
-                  '0 0 40px hsl(270 95% 75% / 0.6)',
-                  '0 0 20px hsl(270 95% 75% / 0.3)'
-                ]
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative"
+            >
+              <div className="rounded-full p-[3px] bg-gradient-to-br from-neon-cyan via-neon-purple to-neon-blue">
+                <div className="rounded-full p-[3px] bg-[#05060A]">
+                  <div className="relative rounded-full overflow-hidden">
+                    <motion.div
+                      className="pointer-events-none absolute inset-0 rounded-full border-2 border-cyan-400/40 z-10"
+                      animate={{
+                        boxShadow: [
+                          '0 0 24px hsl(187 100% 50% / 0.45), 0 0 48px hsl(271 91% 65% / 0.3)',
+                          '0 0 40px hsl(187 100% 50% / 0.7), 0 0 72px hsl(271 91% 65% / 0.45)',
+                          '0 0 24px hsl(187 100% 50% / 0.45), 0 0 48px hsl(271 91% 65% / 0.3)'
+                        ]
+                      }}
+                      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                    />
+                    <img
+                      src={profileImage}
+                      alt="Shrish"
+                      className="relative z-[1] w-56 h-56 md:w-72 md:h-72 rounded-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
 
-        {/* Name and Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-6"
         >
-          <h1 className="text-5xl md:text-7xl font-bold font-montserrat text-gradient mb-4">
+          <h1 className="text-5xl md:text-7xl font-bold font-orbitron tracking-[0.15em] text-gradient-animated mb-4">
             Shrish
           </h1>
-          <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
+          <h2 className="text-xl md:text-2xl text-[#E6F1FF] subtitle-glow mb-6 font-medium">
             AI/ML Enthusiast | Full Stack Developer
           </h2>
 
-          {/* Typing Animation */}
-          <div className="text-lg md:text-xl text-primary font-medium h-8">
+          <div className="text-lg md:text-xl font-medium h-8 text-neon-cyan drop-shadow-[0_0_12px_hsl(187_100%_50%/0.4)]">
             <TypingAnimation texts={typingTexts} />
           </div>
         </motion.div>
 
-        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
         >
-          Hi, I'm Shrish, Computer Science student at VIT Bhopal with a strong interest in 
+          Hi, I'm Shrish, Computer Science student at VIT Bhopal with a strong interest in
           AI, ML, full stack development, and fintech. I love solving real-world problems through code.
         </motion.p>
 
-        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
-          <Button
-            size="lg"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-11 rounded-md bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-medium shadow-purple hover:shadow-glow transition-all duration-300"
-            asChild
-          >
+          <Button size="lg" className="px-8 py-3 text-lg" asChild>
             <a
               href="https://drive.google.com/file/d/1Rkf3OjS1JrvqQg3w_OQzeoWwGo6hXqVs/view?usp=drive_link"
               target="_blank"
@@ -106,27 +109,15 @@ export function Hero() {
             </a>
           </Button>
 
-
-
           <div className="flex gap-4">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              asChild
-            >
+            <Button variant="outline" size="lg" asChild>
               <a href="https://github.com/Shrishkd" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-5 w-5" />
                 GitHub
               </a>
             </Button>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              asChild
-            >
+            <Button variant="outline" size="lg" asChild>
               <a href="https://www.linkedin.com/in/shrish-das-44ba5a27b/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
@@ -135,7 +126,6 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -145,12 +135,12 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-primary rounded-full flex justify-center"
+            className="w-6 h-10 border-2 border-cyan-400/70 rounded-full flex justify-center shadow-[0_0_16px_hsl(187_100%_50%/0.35)]"
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-primary rounded-full mt-2"
+              className="w-1 h-3 bg-gradient-to-b from-neon-cyan to-neon-purple rounded-full mt-2"
             />
           </motion.div>
         </motion.div>

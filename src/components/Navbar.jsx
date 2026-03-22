@@ -32,7 +32,7 @@ function SocialIconLink({ href, label, children }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="p-2 rounded-full text-foreground/90 hover:text-primary hover:bg-primary/10 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="p-2 rounded-full text-foreground/90 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:text-neon-cyan hover:bg-cyan-500/10 hover:shadow-[0_0_18px_hsl(187_100%_50%/0.45)]"
       whileHover={{ scale: 1.12 }}
       whileTap={{ scale: 0.95 }}
     >
@@ -96,10 +96,8 @@ export function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/80 backdrop-blur-md border-b border-border shadow-lg'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav ${
+        isScrolled ? 'border-cyan-500/25 shadow-[0_8px_32px_-8px_hsl(187_100%_50%/0.15)]' : ''
       }`}
       aria-label="Main navigation"
     >
@@ -108,7 +106,7 @@ export function Navbar() {
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0">
             <motion.button
               type="button"
-              className="flex-shrink-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="flex-shrink-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               whileHover={{ scale: 1.05 }}
               onClick={() => scrollToSection('#home')}
               aria-label="Go to top of page"
@@ -116,14 +114,14 @@ export function Navbar() {
               <motion.img
                 src={profileImage}
                 alt=""
-                className="w-12 h-12 rounded-full object-cover border-2 border-primary"
+                className="w-12 h-12 rounded-full object-cover border-2 border-cyan-400/60 shadow-[0_0_16px_hsl(187_100%_50%/0.35)]"
                 aria-hidden
               />
             </motion.button>
 
             <motion.button
               type="button"
-              className="text-lg sm:text-xl font-bold font-montserrat text-gradient truncate min-w-0"
+              className="text-lg sm:text-xl font-bold font-orbitron tracking-wide text-gradient-animated truncate min-w-0"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('#home')}
@@ -138,10 +136,10 @@ export function Navbar() {
                 key={item.name}
                 type="button"
                 onClick={() => scrollToSection(item.href)}
-                className={`px-1 py-2 text-sm font-semibold transition-colors relative whitespace-nowrap ${
+                className={`nav-link-glow px-1 py-2 text-sm font-semibold relative whitespace-nowrap transition-colors duration-300 ${
                   activeSection === item.href.slice(1)
-                    ? 'text-primary'
-                    : 'text-foreground/90 hover:text-foreground'
+                    ? 'text-neon-cyan drop-shadow-[0_0_12px_hsl(187_100%_50%/0.5)]'
+                    : 'text-foreground/90 hover:text-neon-cyan'
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -149,7 +147,7 @@ export function Navbar() {
                 {item.name}
                 {activeSection === item.href.slice(1) && (
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple shadow-[0_0_12px_hsl(187_100%_50%/0.8)]"
                     layoutId="activeSection"
                     initial={false}
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -169,10 +167,8 @@ export function Navbar() {
             <motion.button
               type="button"
               onClick={() => scrollToSection('#contact')}
-              className={`ml-1 rounded-full px-5 py-2 text-sm font-semibold transition-colors border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
-                isSayHelloActive
-                  ? 'bg-primary text-primary-foreground border-primary-foreground/30 shadow-md'
-                  : 'bg-primary/85 text-primary-foreground border-primary-foreground/25 hover:bg-primary'
+              className={`ml-1 rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300 ease-out border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background bg-gradient-to-r from-neon-blue via-neon-cyan to-neon-purple text-primary-foreground border-cyan-400/30 shadow-neon-sm hover:shadow-neon-md hover:scale-[1.03] ${
+                isSayHelloActive ? 'ring-2 ring-cyan-400/40' : ''
               }`}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
@@ -193,7 +189,7 @@ export function Navbar() {
             <motion.button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-foreground hover:text-primary transition-colors p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="text-foreground hover:text-neon-cyan transition-colors duration-300 p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/50"
               whileTap={{ scale: 0.95 }}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-nav-menu"
@@ -212,7 +208,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
+            className="md:hidden bg-background/90 backdrop-blur-xl border-b border-cyan-500/20 overflow-hidden"
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item, index) => (
@@ -220,11 +216,11 @@ export function Navbar() {
                   key={item.name}
                   type="button"
                   onClick={() => scrollToSection(item.href)}
-                  className={`block w-full text-left px-3 py-2 text-base font-semibold transition-colors ${
+                  className={`block w-full text-left px-3 py-2 text-base font-semibold transition-all duration-300 rounded-lg ${
                     activeSection === item.href.slice(1)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-foreground/90 hover:text-foreground hover:bg-muted/50'
-                  } rounded-lg`}
+                      ? 'text-neon-cyan bg-cyan-500/10 shadow-[inset_0_0_20px_hsl(187_100%_50%/0.08)]'
+                      : 'text-foreground/90 hover:text-neon-cyan hover:bg-cyan-500/5'
+                  }`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -236,17 +232,15 @@ export function Navbar() {
               <motion.button
                 type="button"
                 onClick={() => scrollToSection('#contact')}
-                className={`w-full rounded-full px-5 py-3 text-base font-semibold border transition-colors ${
-                  isSayHelloActive
-                    ? 'bg-primary text-primary-foreground border-primary-foreground/30'
-                    : 'bg-primary/85 text-primary-foreground border-primary-foreground/25 hover:bg-primary'
+                className={`w-full rounded-full px-5 py-3 text-base font-semibold border transition-all duration-300 bg-gradient-to-r from-neon-blue via-neon-cyan to-neon-purple text-primary-foreground border-cyan-400/30 shadow-neon-sm hover:shadow-neon-md ${
+                  isSayHelloActive ? 'ring-2 ring-cyan-400/40' : ''
                 }`}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Say Hello
+                Say S'up!
               </motion.button>
             </div>
           </motion.div>

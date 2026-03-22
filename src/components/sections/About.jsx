@@ -12,10 +12,10 @@ export function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl section-heading text-gradient mb-6">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-8 shadow-neon-sm" />
         </motion.div>
 
         <motion.div
@@ -24,7 +24,7 @@ export function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Card className="p-8 md:p-12 bg-card border-border shadow-lg hover:shadow-purple transition-all duration-300">
+          <Card className="p-8 md:p-12">
             <div className="text-center">
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
                 Hey, I am Shrish, Computer Science student currently pursuing my B.Tech in AI/ML at VIT Bhopal. 

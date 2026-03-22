@@ -94,10 +94,10 @@ export function Certifications() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 id="certifications-heading" className="text-4xl md:text-5xl font-bold font-montserrat text-gradient mb-6">
+          <h2 id="certifications-heading" className="text-4xl md:text-5xl section-heading text-gradient mb-6">
             Certifications
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8" />
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-8 shadow-neon-sm" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Professional credentials and verified learning paths
           </p>
@@ -123,9 +123,9 @@ export function Certifications() {
                 aria-label={`${cert.title} — ${cert.provider}, verify credential (opens in new tab)`}
               >
                 <Card
-                  className="p-6 bg-card border-border shadow-lg transition-all duration-300 hover:cursor-pointer hover:scale-[1.02]"
+                  className="p-6 transition-all duration-300 hover:cursor-pointer hover:scale-[1.02] hover:border-cyan-400/40 hover:shadow-[0_0_40px_-12px_hsl(187_100%_50%/0.25)]"
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = `0 10px 30px -5px ${cert.color}40, 0 0 0 1px ${cert.color}20`;
+                    e.currentTarget.style.boxShadow = `0 12px 40px -8px ${cert.color}35, 0 0 0 1px ${cert.color}25`;
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.boxShadow = '';

@@ -77,10 +77,10 @@ export function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl section-heading text-gradient mb-6">
             Technical Skills
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-8 shadow-neon-sm" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Technologies and tools I work with to bring ideas to life
           </p>
@@ -116,7 +116,7 @@ export function Skills() {
                         whileHover={{ scale: 1.05, y: -5 }}
                         className="group"
                       >
-                        <div className="flex flex-col items-center p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-all duration-300 cursor-pointer">
+                        <div className="flex flex-col items-center p-4 rounded-lg bg-muted/20 border border-cyan-500/10 hover:border-cyan-400/30 hover:bg-cyan-500/5 hover:shadow-[0_0_20px_-4px_hsl(187_100%_50%/0.25)] transition-all duration-300 cursor-pointer">
                           <Icon 
                             className="w-12 h-12 mb-3 transition-transform duration-300 group-hover:scale-110" 
                             style={{ color: skill.color }}

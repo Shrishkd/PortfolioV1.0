@@ -40,10 +40,10 @@ export function Education() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl section-heading text-gradient mb-6">
             Education
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto mb-8 shadow-neon-sm" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             My academic journey and the foundations that shaped my technical expertise
           </p>
@@ -60,11 +60,11 @@ export function Education() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-6 md:p-8 bg-card border-border shadow-lg hover:shadow-purple transition-all duration-300 hover:-translate-y-2">
+                <Card className="p-6 md:p-8">
                   <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Icon className="w-8 h-8 text-primary" />
+                      <div className="w-16 h-16 bg-cyan-500/10 border border-cyan-500/20 rounded-full flex items-center justify-center shadow-[0_0_24px_-8px_hsl(187_100%_50%/0.35)]">
+                        <Icon className="w-8 h-8 text-neon-cyan" />
                       </div>
                     </div>
 
@@ -85,7 +85,7 @@ export function Education() {
                             <span>{edu.period}</span>
                           </div>
                           {edu.cgpa && (
-                            <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                            <div className="bg-cyan-500/10 border border-cyan-500/25 text-neon-cyan px-3 py-1 rounded-full text-sm font-medium">
                               CGPA: {edu.cgpa}
                             </div>
                           )}

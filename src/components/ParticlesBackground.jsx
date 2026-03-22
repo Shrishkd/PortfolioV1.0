@@ -4,34 +4,30 @@ export function ParticlesBackground() {
   const particlesRef = useRef(null);
 
   useEffect(() => {
-    // Dynamically import particles.js
     const loadParticles = async () => {
       try {
-        // Load particles.js from CDN
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
         script.onload = () => {
           if (window.pJSDom && window.pJSDom.length > 0) {
-            // Destroy existing particles if any
             window.pJSDom.forEach(particle => {
               if (particle.pJS && particle.pJS.fn && particle.pJS.fn.vendors) {
                 particle.pJS.fn.vendors.destroypJS();
               }
             });
           }
-          
-          // Initialize particles
+
           window.particlesJS('particles-js', {
             particles: {
               number: {
-                value: 100,
+                value: 90,
                 density: {
                   enable: true,
                   value_area: 800
                 }
               },
               color: {
-                value: '#a855f7'
+                value: '#00F0FF'
               },
               shape: {
                 type: 'circle',
@@ -44,7 +40,7 @@ export function ParticlesBackground() {
                 }
               },
               opacity: {
-                value: 0.5,
+                value: 0.45,
                 random: false,
                 anim: {
                   enable: false,
@@ -54,7 +50,7 @@ export function ParticlesBackground() {
                 }
               },
               size: {
-                value: 3,
+                value: 2.5,
                 random: true,
                 anim: {
                   enable: false,
@@ -66,13 +62,13 @@ export function ParticlesBackground() {
               line_linked: {
                 enable: true,
                 distance: 150,
-                color: '#a855f7',
-                opacity: 0.4,
+                color: '#A855F7',
+                opacity: 0.35,
                 width: 1
               },
               move: {
                 enable: true,
-                speed: 6,
+                speed: 4,
                 direction: 'none',
                 random: false,
                 straight: false,
@@ -113,7 +109,7 @@ export function ParticlesBackground() {
                   speed: 3
                 },
                 repulse: {
-                  distance: 200,
+                  distance: 160,
                   duration: 0.4
                 },
                 push: {
@@ -135,7 +131,6 @@ export function ParticlesBackground() {
 
     loadParticles();
 
-    // Cleanup function
     return () => {
       if (window.pJSDom && window.pJSDom.length > 0) {
         window.pJSDom.forEach(particle => {
@@ -148,8 +143,8 @@ export function ParticlesBackground() {
   }, []);
 
   return (
-    <div 
-      id="particles-js" 
+    <div
+      id="particles-js"
       ref={particlesRef}
       className="absolute inset-0 z-0"
       style={{
