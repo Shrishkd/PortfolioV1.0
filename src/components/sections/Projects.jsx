@@ -25,7 +25,7 @@ const projects = [
     githubUrl: "https://github.com/Shrishkd/BullseyeOriginal.git",
     liveUrl: "https://bullseye-deployed.onrender.com", 
     featured: false,
-    image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=500&h=300&fit=crop"
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254644/bullseye_hisubj.png"
   },
   {
     title: "Growstocks",
@@ -34,7 +34,7 @@ const projects = [
     githubUrl: "https://github.com/Shrishkd/GrowStocks-ML.git",
     liveUrl: "https://growstocks-ml-2.onrender.com",
     featured: false,
-    image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=500&h=300&fit=crop"
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254969/copy_of_grwstk_vc2nyg_5ef998.png"
   },
   {
     title: "Sentiment Analysis ML App",
@@ -43,7 +43,7 @@ const projects = [
     githubUrl: "https://github.com/Shrishkd/Moodify2.o.git",
     liveUrl: "https://moodify2-o.vercel.app",
     featured: false,
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop"
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254648/senti_q1pfld.png"
   },
   {
     title: "Car & Gold Price Prediction Web App",
@@ -52,7 +52,7 @@ const projects = [
     githubUrl: "https://github.com/Shrishkd/Prise",
     liveUrl: "https://prise-1.onrender.com",
     featured: false,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop"
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254647/carpred_dxhapm.png"
   }
 ];
 
