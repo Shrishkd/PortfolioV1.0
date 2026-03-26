@@ -10,7 +10,7 @@ const projects = [
   {
     title: "Career Mentor",
     description: "Career Mentor is an AI-driven platform that optimizes interview preparation by generating role-specific questions from resumes. It features interactive voice interviews, live monitoring, and coding challenges. Candidates receive personalized reports with advanced performance scoring and providing the comprehensive feedback to build confidence for real-world career success.",
-    technologies: ["Flask (Python)",  "OpenAI Whisper", "Google Gemini API", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Matplotlib", "Supabase", "React", "TypeScript", "TailwindCSS", "Vite", "Render"],
+    technologies: ["Flask (Python)", "YOLOv8", "OpenAI Whisper", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Google Gemini API",  "Matplotlib", "Supabase", "React", "TypeScript", "TailwindCSS", "Vite", "Render"],
     githubUrl: "https://github.com/Shrishkd/CareerMentor",
     liveUrl: "https://careermentor-ajvl.onrender.com",
     featured: true,
