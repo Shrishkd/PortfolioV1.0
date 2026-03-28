@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Star, ChevronDown, ChevronUp } from 'lucide-react';
+import { Github, ExternalLink, Star, ChevronDown, ChevronUp, FileText, BookOpen } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -26,6 +26,18 @@ const projects = [
     liveUrl: "https://bullseye-deployed.onrender.com", 
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254644/bullseye_hisubj.png"
+  },
+  {
+    title: "Crowd Density Estimation",
+    description:
+      "Real-time crowd density estimation system using YOLOv8, generating spatial heatmaps from video data. Achieved MAE ≈ 3.05 people with stable predictions using temporal smoothing, all on CPU-only infrastructure. Designed an end-to-end pipeline for practical deployment on existing CCTV systems, enabling smarter crowd management.",
+    technologies: [
+      "Python", "OpenCV", "YOLOv8n", "NumPy", "Matplotlib", "Google Colab", "COLORMAP_JET","Grid + Gaussian Blur"],
+    githubUrl: "https://github.com/Shrishkd/crowd_density_estimator.git",
+    colabUrl: "https://colab.research.google.com/drive/18yAbue9z-s7yKqloglEhJMVIMZ9mf7-u?usp=drive_link",
+    reportUrl: "https://drive.google.com/file/d/1oHxRbWl7sMxk-y4xQgLBTaXXHhAUCqB8/view?usp=sharing",
+    featured: false,
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774728899/annotated_frame_bcvid1.png"
   },
   {
     title: "Growstocks",
@@ -158,17 +170,48 @@ export function Projects() {
                     </a>
                   </Button>
 
-                  {/* Live Demo Button */}
-                  <Button
-                    size="sm"
-                    className="flex-1 h-11 px-5 py-2.5"
-                    asChild
-                  >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </a>
-                  </Button>
+                  {project.colabUrl ? (
+                    <>
+                      {/* Colab Notebook Button */}
+                      <Button
+                        size="sm"
+                        className="flex-1 h-11 px-5 py-2.5"
+                        asChild
+                      >
+                        <a href={project.colabUrl} target="_blank" rel="noopener noreferrer">
+                          <BookOpen className="w-4 h-4 mr-2" />
+                          Colab Notebook
+                        </a>
+                      </Button>
+
+                      {/* Report Button */}
+                      {project.reportUrl && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="flex-1 h-11 px-5 py-2.5"
+                          asChild
+                        >
+                          <a href={project.reportUrl} target="_blank" rel="noopener noreferrer">
+                            <FileText className="w-4 h-4 mr-2" />
+                            Report
+                          </a>
+                        </Button>
+                      )}
+                    </>
+                  ) : (
+                    /* Live Demo Button */
+                    <Button
+                      size="sm"
+                      className="flex-1 h-11 px-5 py-2.5"
+                      asChild
+                    >
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </a>
+                    </Button>
+                  )}
 </div>
 
                 </div>
