@@ -42,7 +42,7 @@ const projects = [
   {
     title: "Growstocks",
     description: "An ML-based decision support application that analyzes historical stock data and market indicators to recommend BUY or DO NOT BUY signals with a confidence score. Implements walk-forward validation, offline backtesting, and a FastAPI backend.",
-    technologies: ["Python" , "Scikit-learn" , "Machine Learning" , "FastAPI" , "Pandas" , "NumPy" , "React" , "JavaScript"],
+    technologies: ["Python" , "Random Forest (Scikit-learn)", "Machine Learning" , "FastAPI" , "Pandas" , "NumPy" , "React" , "JavaScript"],
     githubUrl: "https://github.com/Shrishkd/GrowStocks-ML.git",
     liveUrl: "https://growstocks-ml-2.onrender.com",
     featured: false,
@@ -51,7 +51,7 @@ const projects = [
   {
     title: "Sentiment Analysis ML App",
     description: "An intelligent sentiment analysis application that classifies user reviews into 5 different sentiment categories. Built with Flask backend and BERT model for accurate sentiment classification, with support for bulk CSV uploads." ,
-    technologies: ["Python", "Machine Learning", "NLP", "Hugging Face Transformers", "PyTorch", "Flask (REST APIs)", "Pandas", "JavaScript"],
+    technologies: ["Python", "Machine Learning", "NLP", "BERT","Hugging Face Transformers", "PyTorch", "Flask (REST APIs)", "Pandas", "JavaScript"],
     githubUrl: "https://github.com/Shrishkd/Moodify2.o.git",
     liveUrl: "https://moodify2-o.vercel.app",
     featured: false,
@@ -60,7 +60,7 @@ const projects = [
   {
     title: "Car & Gold Price Prediction Web App",
     description: "A comprehensive full-stack web application that predicts car and gold prices based on user input. Features include user authentication, responsive design with loading animations, and a modern UI built with React and Tailwind CSS.",
-    technologies: ["React.js", "Supabase", "Tailwind CSS", "Machine Learning", "Authentication"],
+    technologies: ["Scikit-learn","Pandas","NumPy", " Flask","React.js", "Supabase", "Tailwind CSS", "Authentication"],
     githubUrl: "https://github.com/Shrishkd/Prise",
     liveUrl: "https://prise-1.onrender.com",
     featured: false,
