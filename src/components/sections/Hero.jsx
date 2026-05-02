@@ -6,10 +6,9 @@ import { ParticlesBackground } from '@/components/ParticlesBackground';
 import profileImage from '@/assets/profile-image.png';
 
 const typingTexts = [
-  'ML Developer',
+  'Machine Learning Engineer',
   'Full-Stack Developer',
   'Problem Solver',
-  'Trader'
 ];
 
 export function Hero() {

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin } from 'lucide-react';
+import { Menu, X, FileDown, Github, Linkedin } from 'lucide-react';
 import profileImage from '@/assets/profile-image.png';
 
+const RESUME_URL = 'https://drive.google.com/file/d/1Rkf3OjS1JrvqQg3w_OQzeoWwGo6hXqVs/view?usp=drive_link';
 const GITHUB_URL = 'https://github.com/Shrishkd';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/shrish-das-44ba5a27b/';
 
@@ -158,6 +159,9 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-1 sm:gap-2 shrink-0">
+            <SocialIconLink href={RESUME_URL} label="Download Resume (opens in new tab)">
+              <FileDown className="w-5 h-5" strokeWidth={2} aria-hidden />
+            </SocialIconLink>
             <SocialIconLink href={GITHUB_URL} label="Shrish on GitHub (opens in new tab)">
               <Github className="w-5 h-5" strokeWidth={2} aria-hidden />
             </SocialIconLink>
@@ -179,6 +183,9 @@ export function Navbar() {
 
           <div className="md:hidden flex items-center gap-2">
             <div className="flex items-center gap-0.5">
+              <SocialIconLink href={RESUME_URL} label="Download Resume (opens in new tab)">
+                <FileDown className="w-5 h-5" strokeWidth={2} aria-hidden />
+              </SocialIconLink>
               <SocialIconLink href={GITHUB_URL} label="Shrish on GitHub (opens in new tab)">
                 <Github className="w-5 h-5" strokeWidth={2} aria-hidden />
               </SocialIconLink>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Linkedin, Instagram, Send, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -238,21 +239,24 @@ export function Contact() {
           </motion.div>
         </div>
 
-        {/* Animated Modal */}
-        <AnimatePresence>
-          {showModal && (
-            <motion.div
-              className="fixed top-6 right-6 z-50 rounded-xl border border-cyan-500/25 bg-card/95 backdrop-blur-xl shadow-neon-md px-8 py-6 text-base text-center min-w-64"
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.4 }}
-            >
-              <p className="text-neon-cyan font-semibold drop-shadow-[0_0_8px_hsl(187_100%_50%/0.35)]">Thanks for reaching out! 🙌</p>
-              <p className="text-muted-foreground">I'll get back to you soon.</p>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Animated Modal — portalled to body to escape ancestor stacking contexts */}
+        {createPortal(
+          <AnimatePresence>
+            {showModal && (
+              <motion.div
+                className="fixed top-6 right-6 z-[100] rounded-xl border border-cyan-500/25 bg-card/95 backdrop-blur-xl shadow-neon-md px-8 py-6 text-base text-center min-w-64"
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+              >
+                <p className="text-neon-cyan font-semibold drop-shadow-[0_0_8px_hsl(187_100%_50%/0.35)]">Thanks for reaching out! 🙌</p>
+                <p className="text-muted-foreground">I'll get back to you soon.</p>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
