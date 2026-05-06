@@ -17,9 +17,13 @@ import {
   SiCss3,
   SiTailwindcss,
   SiGithub,
-  SiPlotly
+  SiTensorflow,
+  SiPytorch,
+  SiHuggingface,
+  SiOpencv,
+  SiFastapi
 } from 'react-icons/si';
-import { Coffee, BarChart3, TrendingUp, PieChart } from 'lucide-react';
+import { Coffee, BarChart3, TrendingUp, PieChart, Brain, Network, MessageSquare, Bot, Eye, Target, BookOpen } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const skillCategories = [
@@ -33,35 +37,53 @@ const skillCategories = [
     ]
   },
   {
-    title: "Web Development",
+    title: "Frontend Development",
     skills: [
       { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
       { name: "CSS3", icon: SiCss3, color: "#1572B6" },
       { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "React.js", icon: SiReact, color: "#61DAFB" },
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "Express.js", icon: SiExpress, color: "#000000" },
+      { name: "React.js", icon: SiReact, color: "#61DAFB" }
     ]
   },
   {
-    title: "Machine Learning",
+    title: "Backend Development",
     skills: [
-      { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
-      { name: "Pandas", icon: SiPandas, color: "#150458" },
-      { name: "NumPy", icon: SiNumpy, color: "#013243" },
-      { name: "Matplotlib", icon: BarChart3, color: "#11557C" },
-      { name: "Seaborn", icon: TrendingUp, color: "#4F94CD" },
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+      { name: "Express.js", icon: SiExpress, color: "#E5E7EB" },
+      { name: "Flask", icon: SiFlask, color: "#E5E7EB" },
+      { name: "FastAPI", icon: SiFastapi, color: "#009688" },
     ]
   },
   {
-    title: "Databases & Tools",
+    title: "Machine Learning & AI",
+    skills: [
+      { name: "Deep Learning", icon: Brain, color: "#5DADE2" },
+      { name: "Transformers", icon: Network, color: "#98D8C8" },
+      { name: "LLMs", icon: Bot, color: "#BB8FCE" },
+      { name: "Computer Vision", icon: Eye, color: "#85C1E9" },
+      { name: "YOLOv8", icon: Target, color: "#F8C471" },
+    ]
+  },
+  {
+    title: "Tools & Platforms",
     skills: [
       { name: "AWS", icon: SiAmazonwebservices, color: "#F05032" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-      { name: "Flask", icon: SiFlask, color: "#000000" },
       { name: "Power BI", icon: PieChart, color: "#F2C811" },
-      { name: "GitHub", icon: SiGithub, color: "#181717" }
+      { name: "GitHub", icon: SiGithub, color: "#F5F5F5" },
+    ]
+  },
+  {
+    title: "Libraries & Frameworks",
+    skills: [
+      { name: "NumPy", icon: SiNumpy, color: "#013243" },
+      { name: "Pandas", icon: SiPandas, color: "#150458" },
+      { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
+      { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
+      { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
+      { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
+      { name: "Hugging Face", icon: SiHuggingface, color: "#FFD21E" },
     ]
   }
 ];
@@ -86,7 +108,7 @@ export function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
