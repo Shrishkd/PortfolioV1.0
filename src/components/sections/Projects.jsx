@@ -13,6 +13,7 @@ const projects = [
     technologies: ["Flask (Python)", "YOLOv8", "OpenAI Whisper", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Google Gemini API",  "Matplotlib", "Supabase", "React", "TypeScript", "TailwindCSS", "Vite", "Render"],
     githubUrl: "https://github.com/Shrishkd/CareerMentor",
     liveUrl: "https://careermentor-ajvl.onrender.com",
+    reportUrl: "REPLACE_WITH_CAREER_MENTOR_REPORT_URL",
     featured: true,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774171058/copy_of_career-mentor_m6fcsy_3408b2.png"
   },
@@ -23,7 +24,8 @@ const projects = [
     technologies: [
       "React","TypeScript","TailwindCSS","FastAPI (Python)","Async SQLAlchemy","Pydantic v2","JWT Authentication","WebSockets","Google Gemini API","Technical Indicators","Vector Embeddings","Upstox API","Vite","Render"],
     githubUrl: "https://github.com/Shrishkd/BullseyeOriginal.git",
-    liveUrl: "https://bullseye-deployed.onrender.com", 
+    liveUrl: "https://bullseye-deployed.onrender.com",
+    reportUrl: "REPLACE_WITH_BULLSEYE_REPORT_URL",
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254644/bullseye_hisubj.png"
   },
@@ -41,10 +43,11 @@ const projects = [
   },
   {
     title: "Growstocks",
-    description: "An ML-based decision support application that analyzes historical stock data and market indicators to recommend BUY or DO NOT BUY signals with a confidence score. Implements walk-forward validation, offline backtesting, and a FastAPI backend.",
-    technologies: ["Python" , "Random Forest (Scikit-learn)", "Machine Learning" , "FastAPI" , "Pandas" , "NumPy" , "React" , "JavaScript"],
+    description: "An ML-based decision support application that analyzes historical stock data and market indicators to recommend BUY or DO NOT BUY signals with a confidence score. Implements walk-forward validation, offline backtesting, and a FastAPI backend. Features a modern React frontend with real-time stock analysis powered by stock-specific machine learning models.",
+    technologies: ["Python" ,  "Pandas" , "NumPy" ,  "Machine Learning" , "Random Forest (Scikit-learn)",  "FastAPI" ,"React" , "JavaScript"],
     githubUrl: "https://github.com/Shrishkd/GrowStocks-ML.git",
     liveUrl: "https://growstocks-ml-2.onrender.com",
+    reportUrl: "REPLACE_WITH_GROWSTOCKS_REPORT_URL",
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254969/copy_of_grwstk_vc2nyg_5ef998.png"
   },
@@ -54,6 +57,7 @@ const projects = [
     technologies: ["Python", "NLP", "BERT","Hugging Face", "PyTorch", "Flask", "Pandas", "JavaScript"],
     githubUrl: "https://github.com/Shrishkd/Moodify2.o.git",
     liveUrl: "https://moodify2-o.vercel.app",
+    reportUrl: "REPLACE_WITH_SENTIMENT_REPORT_URL",
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254648/senti_q1pfld.png"
   },
@@ -63,6 +67,7 @@ const projects = [
     technologies: ["Scikit-learn","Pandas","NumPy", " Flask","React.js", "Supabase", "Tailwind CSS", "Authentication"],
     githubUrl: "https://github.com/Shrishkd/Prise",
     liveUrl: "https://prise-1.onrender.com",
+    reportUrl: "REPLACE_WITH_PRISE_REPORT_URL",
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254647/carpred_dxhapm.png"
   }
@@ -171,34 +176,17 @@ export function Projects() {
                   </Button>
 
                   {project.colabUrl ? (
-                    <>
-                      {/* Colab Notebook Button */}
-                      <Button
-                        size="sm"
-                        className="flex-1 h-11 px-5 py-2.5"
-                        asChild
-                      >
-                        <a href={project.colabUrl} target="_blank" rel="noopener noreferrer">
-                          <BookOpen className="w-4 h-4 mr-2" />
-                          Colab Notebook
-                        </a>
-                      </Button>
-
-                      {/* Report Button */}
-                      {project.reportUrl && (
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          className="flex-1 h-11 px-5 py-2.5"
-                          asChild
-                        >
-                          <a href={project.reportUrl} target="_blank" rel="noopener noreferrer">
-                            <FileText className="w-4 h-4 mr-2" />
-                            Report
-                          </a>
-                        </Button>
-                      )}
-                    </>
+                    /* Colab Notebook Button */
+                    <Button
+                      size="sm"
+                      className="flex-1 h-11 px-5 py-2.5"
+                      asChild
+                    >
+                      <a href={project.colabUrl} target="_blank" rel="noopener noreferrer">
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        Colab Notebook
+                      </a>
+                    </Button>
                   ) : (
                     /* Live Demo Button */
                     <Button
@@ -209,6 +197,21 @@ export function Projects() {
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
+                      </a>
+                    </Button>
+                  )}
+
+                  {/* Report Button */}
+                  {project.reportUrl && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="flex-1 h-11 px-5 py-2.5"
+                      asChild
+                    >
+                      <a href={project.reportUrl} target="_blank" rel="noopener noreferrer">
+                        <FileText className="w-4 h-4 mr-2" />
+                        Report
                       </a>
                     </Button>
                   )}

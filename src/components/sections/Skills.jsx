@@ -3,6 +3,7 @@ import {
   SiPython, 
   SiCplusplus, 
   SiJavascript, 
+  SiTypescript,
   SiReact, 
   SiNodedotjs, 
   SiExpress, 
@@ -42,7 +43,8 @@ const skillCategories = [
       { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
       { name: "CSS3", icon: SiCss3, color: "#1572B6" },
       { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "React.js", icon: SiReact, color: "#61DAFB" }
+      { name: "React.js", icon: SiReact, color: "#61DAFB" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" }
     ]
   },
   {
