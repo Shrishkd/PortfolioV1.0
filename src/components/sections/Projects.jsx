@@ -6,14 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const projects = [
-
   {
     title: "Career Mentor",
     description: "Career Mentor is an AI-driven platform that optimizes interview preparation by generating role-specific questions from resumes. It features interactive voice interviews, live monitoring, and coding challenges. Candidates receive personalized reports with advanced performance scoring and providing the comprehensive feedback to build confidence for real-world career success.",
     technologies: ["Flask (Python)", "YOLOv8", "OpenAI Whisper", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Google Gemini API",  "Matplotlib", "Supabase", "React", "TypeScript", "TailwindCSS", "Vite", "Render"],
     githubUrl: "https://github.com/Shrishkd/CareerMentor",
     liveUrl: "https://careermentor-ajvl.onrender.com",
-    reportUrl: "REPLACE_WITH_CAREER_MENTOR_REPORT_URL",
+    reportUrl: "https://drive.google.com/file/d/1qblouoT4DEyeC9dxIrewovRgYtlJ2xw2/view?usp=sharing",
     featured: true,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774171058/copy_of_career-mentor_m6fcsy_3408b2.png"
   },
@@ -22,11 +21,11 @@ const projects = [
     description:
       "An AI-powered investment and trading assistant that provides real-time market data, technical analysis, and intelligent AI-driven explanations. The platform streams live prices via WebSockets, computes indicators like RSI, SMA, and EMA, and uses a Gemini-powered AI assistant to explain market sentiment in a clear, educational manner. ",
     technologies: [
-      "React","TypeScript","TailwindCSS","FastAPI (Python)","Async SQLAlchemy","Pydantic v2","JWT Authentication","WebSockets","Google Gemini API","Technical Indicators","Vector Embeddings","Upstox API","Vite","Render"],
+      "React","TypeScript","TailwindCSS","FastAPI","XGBoost","LSTM","Async SQLAlchemy","Pydantic v2","JWT Authentication","WebSockets","Technical Indicators","Vector Embeddings","Upstox API","Google Gemini API","Vite","Render"],
     githubUrl: "https://github.com/Shrishkd/BullseyeOriginal.git",
     liveUrl: "https://bullseye-deployed.onrender.com",
-    reportUrl: "REPLACE_WITH_BULLSEYE_REPORT_URL",
-    featured: false,
+    reportUrl: "https://drive.google.com/file/d/1IpEw_pgU07MYiihpBf6fBwEfL4e0HSMn/view?usp=sharing",
+    featured: true,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254644/bullseye_hisubj.png"
   },
   {
@@ -37,7 +36,7 @@ const projects = [
       "Python", "OpenCV", "YOLOv8n", "NumPy", "Matplotlib", "Google Colab", "COLORMAP_JET","Grid + Gaussian Blur"],
     githubUrl: "https://github.com/Shrishkd/crowd_density_estimator.git",
     colabUrl: "https://colab.research.google.com/drive/18yAbue9z-s7yKqloglEhJMVIMZ9mf7-u?usp=drive_link",
-    reportUrl: "https://drive.google.com/file/d/1oHxRbWl7sMxk-y4xQgLBTaXXHhAUCqB8/view?usp=sharing",
+    reportUrl: "https://drive.google.com/file/d/1gpgz726n0ShlUsZC6E_18t_lA6ynEynG/view?usp=sharing",
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774728899/annotated_frame_bcvid1.png"
   },
@@ -47,7 +46,7 @@ const projects = [
     technologies: ["Python" ,  "Pandas" , "NumPy" ,  "Machine Learning" , "Random Forest (Scikit-learn)",  "FastAPI" ,"React" , "JavaScript"],
     githubUrl: "https://github.com/Shrishkd/GrowStocks-ML.git",
     liveUrl: "https://growstocks-ml-2.onrender.com",
-    reportUrl: "REPLACE_WITH_GROWSTOCKS_REPORT_URL",
+    reportUrl: "https://drive.google.com/file/d/14jxnlUxe79rFqzcbsqAn6P_EmO6l5-Vd/view?usp=sharing",
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254969/copy_of_grwstk_vc2nyg_5ef998.png"
   },
@@ -57,7 +56,7 @@ const projects = [
     technologies: ["Python", "NLP", "BERT","Hugging Face", "PyTorch", "Flask", "Pandas", "JavaScript"],
     githubUrl: "https://github.com/Shrishkd/Moodify2.o.git",
     liveUrl: "https://moodify2-o.vercel.app",
-    reportUrl: "REPLACE_WITH_SENTIMENT_REPORT_URL",
+    reportUrl: "https://drive.google.com/file/d/1_JIVPEnAP_hLF6GLaFioCy8bBRCJa31s/view?usp=sharing",
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254648/senti_q1pfld.png"
   },
@@ -123,13 +122,6 @@ export function Projects() {
                       <Badge className="border border-cyan-400/30 bg-gradient-to-r from-neon-blue/90 to-neon-purple/90 text-primary-foreground p-1 shadow-neon-sm">
                         <Star className="w-4 h-4 mr-1 text-amber-400 fill-amber-400" />
                         Featured
-                      </Badge>
-                    </div>
-                  )}
-                  {project.title === "Bullseye" && (
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-neon-purple/90 text-white border border-purple-400/40 p-1 shadow-neon-sm">
-                        In development
                       </Badge>
                     </div>
                   )}
