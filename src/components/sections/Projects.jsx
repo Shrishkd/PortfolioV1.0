@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Bullseye",
     description:
-      "An AI-powered investment and trading assistant that provides real-time market data, technical analysis, and intelligent AI-driven explanations. The platform streams live prices via WebSockets, computes indicators like RSI, SMA, and EMA, and uses a Gemini-powered AI assistant to explain market sentiment in a clear, educational manner. ",
+      "An AI-powered investment and trading assistant that provides real-time market data, price prediction using ML models, technical analysis, and intelligent AI-driven explanations. The platform streams live prices via WebSockets, computes indicators like RSI, SMA, and EMA, and uses a Gemini-powered AI assistant to explain market sentiment in a clear, educational manner. ",
     technologies: [
       "React","TypeScript","TailwindCSS","FastAPI","XGBoost","LSTM","Async SQLAlchemy","Pydantic v2","JWT Authentication","WebSockets","Technical Indicators","Vector Embeddings","Upstox API","Google Gemini API","Vite","Render"],
     githubUrl: "https://github.com/Shrishkd/BullseyeOriginal.git",

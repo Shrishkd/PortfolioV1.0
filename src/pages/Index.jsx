@@ -2,7 +2,6 @@ import React from "react";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { Navbar } from "@/components/Navbar";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { CustomCursor } from "@/components/CustomCursor";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Education } from "@/components/sections/Education";
@@ -24,7 +23,6 @@ const Index = () => {
           className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#0a1628]/90 via-background/80 to-background"
           aria-hidden
         />
-        <CustomCursor />
         <Navbar />
         <main className="relative z-10">
           <Hero />
