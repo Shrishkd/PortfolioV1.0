@@ -9,12 +9,21 @@ import {
 } from 'react-icons/si';
 
 const certifications = [
+    {
+    link: 'https://drive.google.com/file/d/1T1aPBe9CW2i_QMkmljlmxbFKvr0ipgSP/view?usp=sharing',
+    title: 'AWS Certified Solutions Architect',
+    provider: 'Amazon Web Services',
+    description: 'AWS Certified Solutions Architect - Associate (SAA-C03)',
+    year: '2026',
+    icon: SiAmazonwebservices,
+    color: '#FF9900'
+  },
   {
     link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=CCAAC2D52EB35996243874976C21CCB0188F8E46C84E3774AEB4006B55A69569',
     title: 'Oracle Cloud Infrastructure: Data Science Professional',
     provider: 'Oracle University',
     description: 'Completed with verified certificate and badge',
-    year: '2024',
+    year: '2025',
     icon: SiOracle,
     color: '#F80000'
   },
@@ -23,7 +32,7 @@ const certifications = [
     title: 'Oracle Cloud Infrastructure: Generative AI Professional',
     provider: 'Oracle University',
     description: 'Completed with verified certificate and badge',
-    year: '2024',
+    year: '2025',
     icon: SiOracle,
     color: '#F80000'
   },
@@ -50,25 +59,16 @@ const certifications = [
     title: 'Google Advanced Data Analytics Capstone',
     provider: 'Google (Coursera)',
     description: 'Completed with verified certificate and badge',
-    year: '2024',
+    year: '2025',
     icon: SiGoogle,
     color: '#4285F4'
-  },
-  {
-    link: 'https://drive.google.com/file/d/1T1aPBe9CW2i_QMkmljlmxbFKvr0ipgSP/view?usp=sharing',
-    title: 'AWS Cloud Practitioner',
-    provider: 'Amazon Web Services',
-    description: 'AWS Technical Essentials: Completed with verified certificate',
-    year: '2026',
-    icon: SiAmazonwebservices,
-    color: '#FF9900'
   },
   {
     link: 'https://coursera.org/verify/MNFOQ5GZB6KX',
     title: 'Generative AI: Prompt Engineering Basics',
     provider: 'IBM (Coursera)',
     description: 'Completed with verified certificate and badge',
-    year: '2024',
+    year: '2025',
     icon: SiCoursera,
     color: '#0056D2'
   },
@@ -77,7 +77,7 @@ const certifications = [
     title: 'Getting Started with AI on Jetson Nano',
     provider: 'NVIDIA',
     description: 'Completed with verified certificate and badge',
-    year: '2024',
+    year: '2025',
     icon: SiNvidia,
     color: '#76B900'
   }
