@@ -6,7 +6,7 @@ const educationData = [
     institution: "VIT Bhopal University",
     degree: "B.Tech Computer Science Engineering (AI & ML)",
     period: "2023 - Present",
-    remark: "CGPA: 8.4",
+    remark: "CGPA: 8.6",
     description: "Specializing in Artificial Intelligence and Machine Learning with focus on full-stack development, machine learning, and software systems. Actively involved in technical clubs and hackathons.",
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1778050174/VIT_logo_eswe7d.png"
   },
