@@ -1,7 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { Navbar } from "@/components/Navbar";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Education } from "@/components/sections/Education";
@@ -34,7 +33,6 @@ const Index = () => {
           <Experience />
           <Contact />
         </main>
-        <ThemeToggle />
       </div>
     </ThemeProvider>
   );
