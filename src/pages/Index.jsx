@@ -9,6 +9,7 @@ import { Certifications } from "@/components/sections/Certifications";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { Contact } from "@/components/sections/Contact";
+import { AvatarWidget } from "@/components/AvatarWidget";
 
 const Index = () => {
   return (
@@ -33,6 +34,7 @@ const Index = () => {
           <Experience />
           <Contact />
         </main>
+        <AvatarWidget />
       </div>
     </ThemeProvider>
   );
