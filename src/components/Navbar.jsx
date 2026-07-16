@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, FileDown, Github, Linkedin } from 'lucide-react';
 import profileImage from '@/assets/profile-image.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { MusicPlayer } from '@/components/MusicPlayer';
 
 const RESUME_URL = 'https://drive.google.com/file/d/1Rkf3OjS1JrvqQg3w_OQzeoWwGo6hXqVs/view?usp=drive_link';
 const GITHUB_URL = 'https://github.com/Shrishkd';
@@ -185,6 +186,7 @@ export function Navbar() {
                 Say S'up
               </motion.button>
               <ThemeToggle variant="navbar" />
+              <MusicPlayer variant="navbar" />
             </div>
           </div>
 
@@ -202,6 +204,7 @@ export function Navbar() {
             </div>
             <div className="h-5 w-px bg-cyan-500/20" aria-hidden />
             <ThemeToggle variant="navbar" />
+            <MusicPlayer variant="navbar" />
             <motion.button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -256,7 +259,7 @@ export function Navbar() {
                 transition={{ delay: navItems.length * 0.1 }}
                 whileTap={{ scale: 0.98 }}
               >
-              Say S'up
+                Say S'up
               </motion.button>
             </div>
           </motion.div>

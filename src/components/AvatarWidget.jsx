@@ -33,7 +33,7 @@ export function AvatarWidget() {
           justifyContent: "center",
         }}
       >
-        🧔🏻‍♂️
+        🕺🏻
       </button>
     );
   }
@@ -46,8 +46,9 @@ export function AvatarWidget() {
         bottom: "0px",          /* flush to the bottom edge */
         right: "32px",
         zIndex: 50,
-        width: "220px",
-        height: "460px",        /* fixed — cannot be changed */
+        width: "300px",         /* wider so dancing arms stay inside */
+        height: "500px",        /* taller for head-room at top */
+        overflow: "hidden",     /* clip any accidental overshoot */
         pointerEvents: "auto",
         userSelect: "none",
       }}
@@ -102,14 +103,14 @@ export function AvatarWidget() {
       {/* @ts-ignore */}
       <model-viewer
         id="avatar-model-viewer"
-        src="/avatars/model5.glb"
+        src="/avatars/model7.glb"
         alt="3D avatar standing on the page"
         camera-controls                   /* drag to rotate */
         disable-zoom                      /* no scroll-zoom */
         disable-pan                       /* no panning */
         autoplay                          /* play the GLB's built-in animation */
         interaction-prompt="none"         /* no "click to interact" tooltip */
-        camera-orbit="0deg 85deg 2.2m"    /* front view, slightly above ground */
+        camera-orbit="0deg 85deg 3.4m"    /* zoomed out so arms fit inside the box */
         min-camera-orbit="auto 60deg auto"
         max-camera-orbit="auto 100deg auto"
         shadow-intensity="0"
