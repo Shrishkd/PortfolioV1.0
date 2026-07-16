@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // ── Royalty-free lofi track (Pixabay — free for any use) ──────────────────────
 // Replace this URL with your own track if desired.
 const MUSIC_URL =
-  '/songs/Sweater Weather-The Neighbourhood.mp3'
+  '/songs/sweater-weather.mp3'
 /** Tiny animated equalizer — three bars that bounce when playing */
 function EqualizerBars() {
   const bars = [
