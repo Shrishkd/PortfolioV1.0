@@ -8,6 +8,7 @@ import { Skills } from "@/components/sections/Skills";
 import { Certifications } from "@/components/sections/Certifications";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
+import { Achievements } from "@/components/sections/Achievements";
 import { Contact } from "@/components/sections/Contact";
 import { AvatarWidget } from "@/components/AvatarWidget";
 
@@ -32,6 +33,7 @@ const Index = () => {
           <Projects />
           <Education />
           <Experience />
+          <Achievements />
           <Contact />
         </main>
         <AvatarWidget />
