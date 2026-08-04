@@ -11,6 +11,65 @@ const typingTexts = [
   'Problem Solver',
 ];
 
+/** Inline hero avatar — absolutely positioned inside the hero section only */
+function HeroAvatar({ src, side }) {
+  const sideStyle = side === 'left'
+    ? { left: 0 }
+    : { right: 0 };
+
+  return (
+    <div
+      aria-hidden
+      style={{
+        position: 'absolute',
+        bottom: '60px',
+        ...sideStyle,
+        width: '300px',
+        height: '500px',
+        overflow: 'hidden',
+        pointerEvents: 'none',
+        zIndex: 5,
+      }}
+    >
+      {/* Foot glow */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '90px',
+          height: '14px',
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(99,102,241,0.35) 0%, transparent 70%)',
+          filter: 'blur(4px)',
+        }}
+      />
+      {/* @ts-ignore */}
+      <model-viewer
+        src={src}
+        alt="3D avatar"
+        autoplay
+        interaction-prompt="none"
+        camera-orbit="0deg 85deg 3.4m"
+        min-camera-orbit="auto 60deg auto"
+        max-camera-orbit="auto 100deg auto"
+        shadow-intensity="0"
+        exposure="1.3"
+        environment-image="neutral"
+        style={{
+          width: '100%',
+          height: '100%',
+          background: 'transparent',
+          '--poster-color': 'transparent',
+          '--progress-bar-color': 'rgba(99,102,241,0.5)',
+          '--progress-bar-height': '2px',
+        }}
+      />
+    </div>
+  );
+}
+
 export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -18,6 +77,11 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <ParticlesBackground />
       </div>
+
+      {/* Left avatar — model6, hero-scoped */}
+      <HeroAvatar src="/avatars/model5.glb" side="left" />
+      {/* Right avatar — model7, hero-scoped */}
+      <HeroAvatar src="/avatars/model7.glb" side="right" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10">
         {/* Profile Image — multi-layer neon ring + float */}

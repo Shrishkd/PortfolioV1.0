@@ -10,7 +10,6 @@ import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { Achievements } from "@/components/sections/Achievements";
 import { Contact } from "@/components/sections/Contact";
-import { AvatarWidget } from "@/components/AvatarWidget";
 
 const Index = () => {
   return (
@@ -36,7 +35,6 @@ const Index = () => {
           <Achievements />
           <Contact />
         </main>
-        <AvatarWidget />
       </div>
     </ThemeProvider>
   );

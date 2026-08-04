@@ -10,6 +10,7 @@ import {
 import awsBadge from '@/assets/AWS badge.png';
 import ociDsBadge from '@/assets/OCI badge DS.jpg';
 import ociGenAiBadge from '@/assets/OCI badge GenAI.jpg';
+import ociAgenticBadge from '@/assets/OCI badge AgenAi.jpg';
 
 const certifications = [
     {
@@ -42,6 +43,16 @@ const certifications = [
     color: '#F80000',
     badge: { image: ociGenAiBadge, link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=C50BFC8A56E7A303507E36FD6BBCCCCC84CDDF9B7A3E3E60CB8D048972CF261C' }
   },
+    {
+    link: 'https://drive.google.com/file/d/1w9G_MPktUNNyKyrex8RFWr1xazSR3J0s/view?usp=sharing',
+    title: 'Oracle Cloud Infrastructure: Agentic AI Associate',
+    provider: 'Oracle University',
+    description: 'Completed with verified certificate and badge',
+    year: '2025',
+    icon: SiOracle,
+    color: '#F80000',
+    badge: { image: ociAgenticBadge, link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=56A5101BDFA28C3DC186BB435477E66DC2849C7838BB785F4D6BC30FF6E59D5C' }
+  },
   {
     link: 'https://www.coursera.org/account/accomplishments/certificate/OI4VZMX0NQOM',
     title: 'Applied Machine Learning in Python',
@@ -59,15 +70,6 @@ const certifications = [
     year: '2024',
     icon: SiCoursera,
     color: '#0056D2'
-  },
-  {
-    link: 'https://coursera.org/verify/NT1R1HGKKWMF',
-    title: 'Google Advanced Data Analytics Capstone',
-    provider: 'Google (Coursera)',
-    description: 'Completed with verified certificate and badge',
-    year: '2025',
-    icon: SiGoogle,
-    color: '#4285F4'
   },
   {
     link: 'https://coursera.org/verify/MNFOQ5GZB6KX',
