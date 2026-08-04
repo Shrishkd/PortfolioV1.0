@@ -48,7 +48,7 @@ const certifications = [
     title: 'Oracle Cloud Infrastructure: Agentic AI Associate',
     provider: 'Oracle University',
     description: 'Completed with verified certificate and badge',
-    year: '2025',
+    year: '2026',
     icon: SiOracle,
     color: '#F80000',
     badge: { image: ociAgenticBadge, link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=56A5101BDFA28C3DC186BB435477E66DC2849C7838BB785F4D6BC30FF6E59D5C' }
