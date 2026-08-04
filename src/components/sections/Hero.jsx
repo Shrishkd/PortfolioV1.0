@@ -19,20 +19,21 @@ function HeroAvatar({ src, side }) {
 
   return (
     <div
-      aria-hidden
       style={{
         position: 'absolute',
         bottom: '60px',
         ...sideStyle,
         width: '300px',
         height: '500px',
-        overflow: 'hidden',
-        pointerEvents: 'none',
+        overflow: 'visible',
+        pointerEvents: 'auto',
         zIndex: 5,
+        cursor: 'grab',
       }}
     >
       {/* Foot glow */}
       <div
+        aria-hidden
         style={{
           position: 'absolute',
           bottom: 0,
@@ -43,17 +44,20 @@ function HeroAvatar({ src, side }) {
           borderRadius: '50%',
           background: 'radial-gradient(ellipse, rgba(99,102,241,0.35) 0%, transparent 70%)',
           filter: 'blur(4px)',
+          pointerEvents: 'none',
         }}
       />
       {/* @ts-ignore */}
       <model-viewer
         src={src}
-        alt="3D avatar"
+        alt="3D avatar — drag to rotate"
         autoplay
+        camera-controls
         interaction-prompt="none"
         camera-orbit="0deg 85deg 3.4m"
-        min-camera-orbit="auto 60deg auto"
-        max-camera-orbit="auto 100deg auto"
+        min-camera-orbit="-Infinity 60deg auto"
+        max-camera-orbit="Infinity 100deg auto"
+        disable-zoom
         shadow-intensity="0"
         exposure="1.3"
         environment-image="neutral"
