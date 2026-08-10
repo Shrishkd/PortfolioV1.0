@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // ── Royalty-free lofi track (Pixabay — free for any use) ──────────────────────
 // Replace this URL with your own track if desired.
 const MUSIC_URL =
-  '/audio/Shrish Das and the New AI Baseline.mp3'
+  '/audio/sweater-weather.mp3'
 /** Tiny animated equalizer — three bars that bounce when playing */
 function EqualizerBars() {
   const bars = [
