@@ -46,7 +46,24 @@ function EqualizerBars() {
   );
 }
 
+/** Returns true when the viewport is at least 768 px wide (tablet / laptop). */
+function useIsLargeScreen() {
+  const [isLarge, setIsLarge] = useState(() =>
+    typeof window !== 'undefined' ? window.matchMedia('(min-width: 768px)').matches : true
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const handler = (e) => setIsLarge(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  return isLarge;
+}
+
 export function MusicPlayer({ variant = 'navbar' }) {
+  const isLargeScreen = useIsLargeScreen();
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [showVolume, setShowVolume] = useState(false);
@@ -56,6 +73,7 @@ export function MusicPlayer({ variant = 'navbar' }) {
 
   /* ── Audio lifecycle ─────────────────────────────────────────────────────── */
   useEffect(() => {
+    if (!isLargeScreen) return; // don't load audio on mobile
     const audio = new Audio(MUSIC_URL);
     audio.loop = true;
     audio.volume = volume;
@@ -64,9 +82,10 @@ export function MusicPlayer({ variant = 'navbar' }) {
     return () => {
       audio.pause();
       audio.src = '';
+      audioRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isLargeScreen]);
 
   useEffect(() => {
     if (audioRef.current) audioRef.current.volume = volume;
@@ -98,6 +117,9 @@ export function MusicPlayer({ variant = 'navbar' }) {
   const btnClass = isNavbar
     ? 'p-2.5 rounded-full text-foreground/90 bg-card/30 border border-cyan-500/20 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:text-neon-cyan hover:bg-cyan-500/10 hover:border-cyan-400/40 hover:shadow-[0_0_18px_hsl(187_100%_50%/0.35)]'
     : 'fixed bottom-6 right-20 z-50 p-3 rounded-full bg-card/70 backdrop-blur-xl border border-cyan-500/30 shadow-neon-sm hover:shadow-neon-md hover:border-cyan-400/50 transition-all duration-300 ease-out';
+
+  // Hide entirely on mobile/small screens
+  if (!isLargeScreen) return null;
 
   return (
     <div ref={volumeRef} style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
