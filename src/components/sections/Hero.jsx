@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Download, Github, Linkedin } from 'lucide-react';
+import { Eye, Github, Linkedin } from 'lucide-react';
 import { TypingAnimation } from '@/components/TypingAnimation';
 import { Button } from '@/components/ui/button';
 import { ParticlesBackground } from '@/components/ParticlesBackground';
 import profileImage from '@/assets/profile-image.png';
 
 const typingTexts = [
-  'Machine Learning Engineer',
+  'AI Engineer',
   'Full-Stack Developer',
   'Problem Solver',
 ];
@@ -82,10 +82,14 @@ export function Hero() {
         <ParticlesBackground />
       </div>
 
-      {/* Left avatar — model6, hero-scoped */}
-      <HeroAvatar src="/avatars/model5.glb" side="left" />
-      {/* Right avatar — model7, hero-scoped */}
-      <HeroAvatar src="/avatars/model7.glb" side="right" />
+      {/* Left avatar — model5, hero-scoped — hidden on mobile */}
+      <div className="hidden md:block">
+        <HeroAvatar src="/avatars/model5.glb" side="left" />
+      </div>
+      {/* Right avatar — model7, hero-scoped — hidden on mobile */}
+      <div className="hidden md:block">
+        <HeroAvatar src="/avatars/model7.glb" side="right" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10">
         {/* Profile Image — multi-layer neon ring + float */}
@@ -141,7 +145,7 @@ export function Hero() {
             Shrish
           </h1>
           <h2 className="text-xl md:text-2xl text-[#E6F1FF] subtitle-glow mb-6 font-medium">
-            AI/ML Enthusiast | Full Stack Developer
+            AI&ML Enthusiast | Full Stack Developer
           </h2>
 
           <div className="text-lg md:text-xl font-medium h-8 text-neon-cyan drop-shadow-[0_0_12px_hsl(187_100%_50%/0.4)]">
@@ -170,8 +174,8 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Download className="mr-2 h-5 w-5" />
-              Download Resume
+              <Eye className="mr-2 h-5 w-5"/>
+              See Resume
             </a>
           </Button>
 

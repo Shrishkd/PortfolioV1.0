@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import {
   SiAmazonwebservices,
@@ -24,14 +26,14 @@ const certifications = [
     badge: { image: awsBadge, link: 'https://www.credly.com/badges/588db674-8e67-4d49-965d-a9c05c77f81e/public_url' }
   },
   {
-    link: 'https://drive.google.com/file/d/186GP44w0tKs3tk3YcVKjQKVM5v4GuySp/view?usp=sharing',
-    title: 'Oracle Cloud Infrastructure: Data Science Professional',
-    provider: 'Oracle University',
-    description: 'Completed with verified certificate and badge',
-    year: '2025',
-    icon: SiOracle,
-    color: '#F80000',
-    badge: { image: ociDsBadge, link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=CCAAC2D52EB35996243874976C21CCB0188F8E46C84E3774AEB4006B55A69569' }
+    link: 'https://drive.google.com/file/d/1_oBVVp4Zt7k2eOFkZZdBU9vYY19AuCfs/view?usp=sharing',
+    title: 'AWS Certified Machine Learning Engineer',
+    provider: 'Amazon Web Services',
+    description: ' AWS Certified Machine Learning Engineer - Associate (MLA-C01)',
+    year: '2026',
+    icon: SiAmazonwebservices,
+    color: '#FF9900',
+    badge: { image: awsBadge, link: 'https://www.credly.com/badges/90b9e8ae-0d18-440a-b30f-4a6e304faa2f/public_url' }
   },
   {
     link: 'https://drive.google.com/file/d/1s0t5AVON8mFAKssqJV2a28On5cGSvGyz/view?usp=sharing',
@@ -52,6 +54,16 @@ const certifications = [
     icon: SiOracle,
     color: '#F80000',
     badge: { image: ociAgenticBadge, link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=56A5101BDFA28C3DC186BB435477E66DC2849C7838BB785F4D6BC30FF6E59D5C' }
+  },
+  {
+    link: 'https://drive.google.com/file/d/186GP44w0tKs3tk3YcVKjQKVM5v4GuySp/view?usp=sharing',
+    title: 'Oracle Cloud Infrastructure: Data Science Professional',
+    provider: 'Oracle University',
+    description: 'Completed with verified certificate and badge',
+    year: '2025',
+    icon: SiOracle,
+    color: '#F80000',
+    badge: { image: ociDsBadge, link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=CCAAC2D52EB35996243874976C21CCB0188F8E46C84E3774AEB4006B55A69569' }
   },
   {
     link: 'https://www.coursera.org/account/accomplishments/certificate/OI4VZMX0NQOM',
@@ -143,7 +155,13 @@ function CertDetails({ cert }) {
   );
 }
 
+const VISIBLE_COUNT = 6;
+
 export function Certifications() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleCerts = showAll ? certifications : certifications.slice(0, VISIBLE_COUNT);
+  const hasMore = certifications.length > VISIBLE_COUNT;
+
   return (
     <section id="certifications" className="py-20 relative" aria-labelledby="certifications-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -164,94 +182,123 @@ export function Certifications() {
         </motion.div>
 
         <div className="flex flex-col gap-6">
-          {certifications.map((cert, index) => {
-            const Icon = cert.icon;
-            const isGoogle = cert.provider.includes('Google');
-            const hasBadge = Boolean(cert.badge);
+          <AnimatePresence initial={false}>
+            {visibleCerts.map((cert, index) => {
+              const Icon = cert.icon;
+              const isGoogle = cert.provider.includes('Google');
+              const hasBadge = Boolean(cert.badge);
 
-            const cardClassName =
-              'transition-all duration-300 hover:cursor-pointer hover:scale-[1.02] hover:border-cyan-400/40 hover:shadow-[0_0_40px_-12px_hsl(187_100%_50%/0.25)]';
-            const cardHoverHandlers = {
-              onMouseEnter: (e) => {
-                e.currentTarget.style.boxShadow = `0 12px 40px -8px ${cert.color}35, 0 0 0 1px ${cert.color}25`;
-              },
-              onMouseLeave: (e) => {
-                e.currentTarget.style.boxShadow = '';
-              }
-            };
-            const motionProps = {
-              initial: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
-              whileInView: { opacity: 1, x: 0 },
-              transition: { duration: 0.8, delay: index * 0.08 },
-              viewport: { once: true },
-              whileHover: { y: -5 }
-            };
+              const cardClassName =
+                'transition-all duration-300 hover:cursor-pointer hover:scale-[1.02] hover:border-cyan-400/40 hover:shadow-[0_0_40px_-12px_hsl(187_100%_50%/0.25)]';
+              const cardHoverHandlers = {
+                onMouseEnter: (e) => {
+                  e.currentTarget.style.boxShadow = `0 12px 40px -8px ${cert.color}35, 0 0 0 1px ${cert.color}25`;
+                },
+                onMouseLeave: (e) => {
+                  e.currentTarget.style.boxShadow = '';
+                }
+              };
+              const motionProps = {
+                key: cert.title,
+                initial: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+                animate: { opacity: 1, x: 0 },
+                exit: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+                transition: { duration: 0.5, delay: index < VISIBLE_COUNT ? index * 0.05 : 0 },
+                whileHover: { y: -5 }
+              };
 
-            if (hasBadge) {
-              return (
-                <motion.div
-                  key={cert.title}
-                  className="block focus-within:outline-none rounded-xl"
-                  {...motionProps}
-                >
-                  <Card className={`${cardClassName} p-0 overflow-hidden`} {...cardHoverHandlers}>
-                    <div className="flex items-stretch">
-                      <a
-                        href={cert.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex w-[90%] items-center gap-4 p-6 min-w-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset rounded-l-xl"
-                        aria-label={`${cert.title} — ${cert.provider}, verify certificate (opens in new tab)`}
-                      >
-                        <CertIcon cert={cert} Icon={Icon} isGoogle={isGoogle} />
-                        <CertDetails cert={cert} />
-                      </a>
-
-                      <div className="relative flex w-[10%] shrink-0 items-center justify-center px-2">
-                        <div
-                          className="absolute left-0 top-1/2 h-[72%] w-px -translate-y-1/2 bg-cyan-400/45"
-                          aria-hidden
-                        />
+              if (hasBadge) {
+                return (
+                  <motion.div
+                    {...motionProps}
+                    className="block focus-within:outline-none rounded-xl"
+                  >
+                    <Card className={`${cardClassName} p-0 overflow-hidden`} {...cardHoverHandlers}>
+                      <div className="flex items-stretch">
                         <a
-                          href={cert.badge.link}
+                          href={cert.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center rounded-md p-1 transition-transform duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                          aria-label={`${cert.title} — view badge credential (opens in new tab)`}
+                          className="flex w-[90%] items-center gap-4 p-6 min-w-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset rounded-l-xl"
+                          aria-label={`${cert.title} — ${cert.provider}, verify certificate (opens in new tab)`}
                         >
-                          <img
-                            src={cert.badge.image}
-                            alt={`${cert.title} badge`}
-                            className="h-12 w-12 object-contain"
-                          />
+                          <CertIcon cert={cert} Icon={Icon} isGoogle={isGoogle} />
+                          <CertDetails cert={cert} />
                         </a>
+
+                        <div className="relative flex w-[10%] shrink-0 items-center justify-center px-2">
+                          <div
+                            className="absolute left-0 top-1/2 h-[72%] w-px -translate-y-1/2 bg-cyan-400/45"
+                            aria-hidden
+                          />
+                          <a
+                            href={cert.badge.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center rounded-md p-1 transition-transform duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                            aria-label={`${cert.title} — view badge credential (opens in new tab)`}
+                          >
+                            <img
+                              src={cert.badge.image}
+                              alt={`${cert.title} badge`}
+                              className="h-12 w-12 object-contain"
+                            />
+                          </a>
+                        </div>
                       </div>
+                    </Card>
+                  </motion.div>
+                );
+              }
+
+              return (
+                <motion.a
+                  {...motionProps}
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-xl"
+                  aria-label={`${cert.title} — ${cert.provider}, verify credential (opens in new tab)`}
+                >
+                  <Card className={`p-6 ${cardClassName}`} {...cardHoverHandlers}>
+                    <div className="flex items-center gap-4">
+                      <CertIcon cert={cert} Icon={Icon} isGoogle={isGoogle} />
+                      <CertDetails cert={cert} />
                     </div>
                   </Card>
-                </motion.div>
+                </motion.a>
               );
-            }
-
-            return (
-              <motion.a
-                key={cert.title}
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-xl"
-                {...motionProps}
-                aria-label={`${cert.title} — ${cert.provider}, verify credential (opens in new tab)`}
-              >
-                <Card className={`p-6 ${cardClassName}`} {...cardHoverHandlers}>
-                  <div className="flex items-center gap-4">
-                    <CertIcon cert={cert} Icon={Icon} isGoogle={isGoogle} />
-                    <CertDetails cert={cert} />
-                  </div>
-                </Card>
-              </motion.a>
-            );
-          })}
+            })}
+          </AnimatePresence>
         </div>
+
+        {/* Show More / Show Less */}
+        {hasMore && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-8"
+          >
+            <button
+              onClick={() => setShowAll(prev => !prev)}
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-cyan-400/40 text-neon-cyan bg-cyan-400/5 hover:bg-cyan-400/15 hover:border-cyan-400/70 hover:shadow-[0_0_24px_hsl(187_100%_50%/0.3)] transition-all duration-300"
+            >
+              {showAll ? (
+                <>
+                  <ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                  Show Less
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-200" />
+                  Show {certifications.length - VISIBLE_COUNT} More
+                </>
+              )}
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

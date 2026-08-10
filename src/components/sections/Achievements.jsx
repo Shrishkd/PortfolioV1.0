@@ -9,10 +9,10 @@ import {
    STATIC FALLBACK DATA  (from profile screenshot)
 ───────────────────────────────────────── */
 const FALLBACK_LC = {
-  total: 69,
+  total: 71,
   rank: '#2096959',
-  easy: { solved: 38, total: 956 },
-  medium: { solved: 29, total: 2088 },
+  easy: { solved: 39, total: 956 },
+  medium: { solved: 30, total: 2088 },
   hard: { solved: 2, total: 955 },
 };
 
@@ -107,10 +107,11 @@ function useDSAStats() {
   const fetchLC = async () => {
     setLcLoading(true);
     try {
+      // Primary API
       const res = await fetch('https://leetcode-stats-api.herokuapp.com/Shrishd', {
         signal: AbortSignal.timeout(7000),
       });
-      if (!res.ok) throw new Error('bad status');
+      if (!res.ok) throw new Error('primary failed');
       const data = await res.json();
       if (data.status === 'success') {
         setLc({
@@ -121,9 +122,32 @@ function useDSAStats() {
           hard: { solved: data.hardSolved, total: data.totalHard },
         });
         setLcLive(true);
+        return;
       }
+      throw new Error('bad payload');
     } catch {
-      // silent fallback — static data already set
+      // Fallback to secondary API
+      try {
+        const res2 = await fetch(
+          'https://alfa-leetcode-api.onrender.com/Shrishd/solved',
+          { signal: AbortSignal.timeout(8000) },
+        );
+        if (!res2.ok) throw new Error('secondary failed');
+        const d2 = await res2.json();
+        // API returns: solvedProblem, easySolved, mediumSolved, hardSolved
+        if (d2 && typeof d2.solvedProblem === 'number') {
+          setLc({
+            total: d2.solvedProblem,
+            rank: FALLBACK_LC.rank,
+            easy: { solved: d2.easySolved ?? FALLBACK_LC.easy.solved, total: FALLBACK_LC.easy.total },
+            medium: { solved: d2.mediumSolved ?? FALLBACK_LC.medium.solved, total: FALLBACK_LC.medium.total },
+            hard: { solved: d2.hardSolved ?? FALLBACK_LC.hard.solved, total: FALLBACK_LC.hard.total },
+          });
+          setLcLive(true);
+        }
+      } catch {
+        // silent: static fallback data already set
+      }
     } finally {
       setLcLoading(false);
     }
