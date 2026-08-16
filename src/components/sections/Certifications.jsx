@@ -9,7 +9,9 @@ import {
   SiGoogle,
   SiNvidia
 } from 'react-icons/si';
-import awsBadge from '@/assets/AWS badge.png';
+import awsSABadge from '@/assets/AWS badge SA.png';
+import awsMLBadge from '@/assets/AWS badge ML.png';
+import awsAIBadge from '@/assets/AWS badge AI.png';
 import ociDsBadge from '@/assets/OCI badge DS.jpg';
 import ociGenAiBadge from '@/assets/OCI badge GenAI.jpg';
 import ociAgenticBadge from '@/assets/OCI badge AgenAi.jpg';
@@ -19,21 +21,31 @@ const certifications = [
     link: 'https://drive.google.com/file/d/1ZQDyczdKUA4pJKXvOU204JEMK4eCZg7Z/view?usp=sharing',
     title: 'AWS Certified Solutions Architect',
     provider: 'Amazon Web Services',
-    description: 'AWS Certified Solutions Architect - Associate (SAA-C03)',
+    description: 'AWS Certified Solutions Architect - Associate (SAA-C03). Scored 820/1000',
     year: '2026',
     icon: SiAmazonwebservices,
     color: '#FF9900',
-    badge: { image: awsBadge, link: 'https://www.credly.com/badges/588db674-8e67-4d49-965d-a9c05c77f81e/public_url' }
+    badge: { image: awsSABadge, link: 'https://www.credly.com/badges/588db674-8e67-4d49-965d-a9c05c77f81e/public_url' }
   },
   {
     link: 'https://drive.google.com/file/d/1_oBVVp4Zt7k2eOFkZZdBU9vYY19AuCfs/view?usp=sharing',
     title: 'AWS Certified Machine Learning Engineer',
     provider: 'Amazon Web Services',
-    description: ' AWS Certified Machine Learning Engineer - Associate (MLA-C01)',
+    description: ' AWS Certified Machine Learning Engineer - Associate (MLA-C01). Scored 922/1000',
     year: '2026',
     icon: SiAmazonwebservices,
     color: '#FF9900',
-    badge: { image: awsBadge, link: 'https://www.credly.com/badges/90b9e8ae-0d18-440a-b30f-4a6e304faa2f/public_url' }
+    badge: { image: awsMLBadge, link: 'https://www.credly.com/badges/90b9e8ae-0d18-440a-b30f-4a6e304faa2f/public_url' }
+  },
+  {
+    link: 'https://drive.google.com/file/d/1Ddrx8ipsoEf_S8Sz-6-JYrgLu7ikAk_z/view?usp=sharing',
+    title: 'AWS Certified AI Practitioner',
+    provider: 'Amazon Web Services',
+    description: 'AWS Certified AI Practitioner (AIF-C01). Scored 890/1000',
+    year: '2026',
+    icon: SiAmazonwebservices,
+    color: '#FF9900',
+    badge: { image: awsAIBadge, link: 'https://www.credly.com/badges/9e96d5db-6d13-4912-a8df-02cbf06f74bd/public_url' }
   },
   {
     link: 'https://drive.google.com/file/d/1s0t5AVON8mFAKssqJV2a28On5cGSvGyz/view?usp=sharing',
