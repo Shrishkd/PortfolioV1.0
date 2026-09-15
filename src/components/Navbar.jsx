@@ -12,10 +12,12 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/shrish-das-44ba5a27b/';
 const navItems = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
+  { name: 'Experience', href: '#experience' },
   { name: 'Certificates', href: '#certifications' },
   { name: 'Projects', href: '#projects' },
   { name: 'Education', href: '#education' }
 ];
+
 
 /** Section IDs in page order for scroll-spy (includes #contact for Say Hello) */
 const SCROLL_SPY_IDS = [
