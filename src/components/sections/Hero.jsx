@@ -170,7 +170,7 @@ export function Hero() {
         >
           <Button size="lg" className="px-8 py-3 text-lg" asChild>
             <a
-              href="https://drive.google.com/file/d/1Rkf3OjS1JrvqQg3w_OQzeoWwGo6hXqVs/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1DmB1PdO3sO6A4qI2ker3Xsj0_ewKBafy/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
