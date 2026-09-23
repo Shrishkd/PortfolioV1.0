@@ -10,7 +10,6 @@ Welcome to my personal portfolio website — a fully responsive, animated, and m
 
 🔗 [View Portfolio Live](https://shrish-portfolio.netlify.app/)  
 🧠 [LinkedIn](https://www.linkedin.com/in/shrish-das-44ba5a27b/)  
-📂 [Resume (PDF)](https://drive.google.com/file/d/1Rkf3OjS1JrvqQg3w_OQzeoWwGo6hXqVs/view?usp=drive_link)
 
 ---
 
