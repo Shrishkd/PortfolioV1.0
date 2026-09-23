@@ -5,7 +5,7 @@ import profileImage from '@/assets/profile-image.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { MusicPlayer } from '@/components/MusicPlayer';
 
-const RESUME_URL = 'https://drive.google.com/file/d/1Rkf3OjS1JrvqQg3w_OQzeoWwGo6hXqVs/view?usp=drive_link';
+const RESUME_URL = 'https://drive.google.com/file/d/1DmB1PdO3sO6A4qI2ker3Xsj0_ewKBafy/view?usp=sharing';
 const GITHUB_URL = 'https://github.com/Shrishkd';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/shrish-das-44ba5a27b/';
 
