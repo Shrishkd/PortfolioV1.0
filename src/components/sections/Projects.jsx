@@ -7,9 +7,18 @@ import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
+    title: "Advanced Hybrid RAG Chatbot",
+    description: "Built a retrieval-augmented chatbot over six ML textbooks (~3,500 pages) with LangGraph orchestration and a FastAPI + Streamlit serving stack, benchmarking every pipeline decision (chunker, embedder, index, retriever, reranker) against a hand-labeled 50-question golden set. Designed a hybrid BM25 + dense retrieval pipeline (Reciprocal Rank Fusion) that improved MRR by 5.3 points (p < 0.0001) over dense-only search. Validated generation quality with a citation-level LLM-as-judge, reaching 0.87 faithfulness and a 7/7 pass rate on an end-to-end acceptance test covering cross-document questions and prompt-injection defense.",
+    technologies: ["Python", "LangGraph", "FastAPI", "Streamlit", "Ollama", "FAISS", "BM25", "Reciprocal Rank Fusion", "LLM-as-Judge", "RAG"],
+    githubUrl: "https://github.com/Shrishkd/Advance-hybrid-rag",
+    reportUrl: "https://drive.google.com/file/d/1tFehzHMFcGLX8gu0D4ZKkKAtj0Ytb1Ll/view",
+    featured: true,
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254644/bullseye_hisubj.png"
+  },
+  {
     title: "Career Mentor",
-    description: "Career Mentor is an AI-driven platform that optimizes interview preparation by generating role-specific questions from resumes. It features interactive voice interviews, live monitoring, and coding challenges. Candidates receive personalized reports with advanced performance scoring and providing the comprehensive feedback to build confidence for real-world career success.",
-    technologies: ["Flask (Python)", "YOLOv8", "OpenAI Whisper", "Mediapipe", "OpenCV","Computer Vision", "FPDF", "PyMuPDF", "SpeechRecognition", "Google Gemini API",  "Matplotlib", "Supabase", "React", "TypeScript", "TailwindCSS", "Vite", "Render"],
+    description: "Full-stack AI mock-interview platform that parses uploaded resumes and generates 5 personalized questions (3 conceptual + 2 coding) using a locally-hosted Qwen3-4B LLM via Ollama, eliminating recurring API costs. Built a real-time computer-vision proctoring pipeline (MediaPipe, OpenCV) tracking eye contact, posture, and tab-switch events, paired with a background grading queue (Whisper transcription + rubric-based LLM scoring) that cut the prior 30–90s wait between answers to zero. Also ships a standalone ATS Resume Checker with deterministic keyword-gap analysis, AI-rewritten bullet suggestions, and automated PDF report generation against any job description.",
+    technologies: ["React", "TypeScript", "Flask", "Ollama (Qwen3-4B)", "OpenAI Whisper", "MediaPipe", "OpenCV", "Computer Vision", "FPDF", "PyMuPDF", "Supabase", "Vite"],
     githubUrl: "https://github.com/Shrishkd/CareerMentor",
     liveUrl: "https://careermentor-ajvl.onrender.com",
     reportUrl: "https://drive.google.com/file/d/1qblouoT4DEyeC9dxIrewovRgYtlJ2xw2/view?usp=sharing",
@@ -27,6 +36,16 @@ const projects = [
     reportUrl: "https://drive.google.com/file/d/1IpEw_pgU07MYiihpBf6fBwEfL4e0HSMn/view?usp=sharing",
     featured: true,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254644/bullseye_hisubj.png"
+  },
+  {
+    title: "Sentiment Analysis ML App",
+    description: "An intelligent sentiment analysis application that classifies user reviews into 5 different sentiment categories. Built with Flask backend and BERT model for accurate sentiment classification, with support for bulk CSV uploads." ,
+    technologies: ["Python", "NLP", "BERT","Hugging Face", "PyTorch", "Flask", "Pandas", "JavaScript"],
+    githubUrl: "https://github.com/Shrishkd/Moodify2.o.git",
+    liveUrl: "https://moodify2-o.vercel.app",
+    reportUrl: "https://drive.google.com/file/d/1_JIVPEnAP_hLF6GLaFioCy8bBRCJa31s/view?usp=sharing",
+    featured: false,
+    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254648/senti_q1pfld.png"
   },
   {
     title: "Crowd Density Estimation",
@@ -49,16 +68,6 @@ const projects = [
     reportUrl: "https://drive.google.com/file/d/14jxnlUxe79rFqzcbsqAn6P_EmO6l5-Vd/view?usp=sharing",
     featured: false,
     image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254969/copy_of_grwstk_vc2nyg_5ef998.png"
-  },
-  {
-    title: "Sentiment Analysis ML App",
-    description: "An intelligent sentiment analysis application that classifies user reviews into 5 different sentiment categories. Built with Flask backend and BERT model for accurate sentiment classification, with support for bulk CSV uploads." ,
-    technologies: ["Python", "NLP", "BERT","Hugging Face", "PyTorch", "Flask", "Pandas", "JavaScript"],
-    githubUrl: "https://github.com/Shrishkd/Moodify2.o.git",
-    liveUrl: "https://moodify2-o.vercel.app",
-    reportUrl: "https://drive.google.com/file/d/1_JIVPEnAP_hLF6GLaFioCy8bBRCJa31s/view?usp=sharing",
-    featured: false,
-    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254648/senti_q1pfld.png"
   },
   {
     title: "Car & Gold Price Prediction Web App",
@@ -179,7 +188,7 @@ export function Projects() {
                         Colab Notebook
                       </a>
                     </Button>
-                  ) : (
+                  ) : project.liveUrl ? (
                     /* Live Demo Button */
                     <Button
                       size="sm"
@@ -191,7 +200,7 @@ export function Projects() {
                         Live Demo
                       </a>
                     </Button>
-                  )}
+                  ) : null}
 
                   {/* Report Button */}
                   {project.reportUrl && (
