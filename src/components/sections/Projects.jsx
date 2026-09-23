@@ -13,7 +13,7 @@ const projects = [
     githubUrl: "https://github.com/Shrishkd/Advance-hybrid-rag",
     reportUrl: "https://drive.google.com/file/d/1tFehzHMFcGLX8gu0D4ZKkKAtj0Ytb1Ll/view",
     featured: true,
-    image: "https://res.cloudinary.com/dks0vhj0j/image/upload/v1774254644/bullseye_hisubj.png"
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&auto=format&fit=crop&q=80"
   },
   {
     title: "Career Mentor",
